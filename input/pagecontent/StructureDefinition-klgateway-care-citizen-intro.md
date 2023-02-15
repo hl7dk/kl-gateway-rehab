@@ -11,5 +11,5 @@ Nedenstående tabel oversætter mellem de attributter, der er defineret i den f�
 {:class="grid"}
 |   FKI-attribut      | Definition        | FHIR  |
 | ------------- |-------------| -----|
-|cpr-nummer|Officielt cpr-nummer på borgeren|identifier.value|
-|Journalførende organisation|Organisation som ejer journalen med oplysninger|managingOrganization.identifier.value|
+|cpr-nummer|Officielt cpr-nummer på borgeren|patient.identifier.value|
+|Journalførende organisation|Organisation som ejer journalen med oplysninger|Patient.managingOrganization.identifier.value|

@@ -2,9 +2,9 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: kl.dk.fhir.tp
-canonical: http://fhir.kl.dk/tp
-name: KLGatewayTrainingPrevention
+id: kl.dk.fhir.rp
+canonical: http://fhir.kl.dk/rp
+name: KLGatewayRehabPrevention
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1

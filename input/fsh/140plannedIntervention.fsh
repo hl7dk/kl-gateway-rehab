@@ -48,7 +48,7 @@ Description: "Planned interventions for §140 training in Danish Municipalities.
 * activity.detail.code.coding[level3].display 1..1
 * activity.detail.code.coding[level3] ^definition = "Shall contain locally defined code if it is a locally defined level 3 intervention"
 * activity.detail.reasonCode ..0
-* activity.detail.reasonReference only Reference(KLGateway140Condition)
+* activity.detail.reasonReference only Reference(klgateway-140-condition)
 * activity.detail.reasonReference MS
 * activity.detail.reasonReference ^definition = "Reason for this intervention. Must contain all conditions known to be addressed by this intervention"
 * activity.detail.reasonReference ^type.aggregation = #bundled
@@ -82,8 +82,8 @@ Description: "Planned interventions for §140 training in Danish Municipalities.
 * activity.detail.quantity ..0
 * activity.detail.description ..0
 * note ..0
-* extension contains klgateway-140-interventiontype-extension named interventiontype 0..1 MS
-* extension[interventiontype] ^definition = "Type of intervention. Individual or group"
+* activity.detail.extension contains klgateway-140-interventiontype-extension named interventiontype 0..1 MS //Extension as close to activity.detail.code as possible
+* activity.detail.extension[interventiontype] ^definition = "Type of intervention. Individual or group"
 
 //Danish descriptions
 * activity.detail.code.coding ^short = "[DK] indsatsskode"
@@ -93,13 +93,13 @@ Description: "Planned interventions for §140 training in Danish Municipalities.
 * intent ^short = "[DK] indsatshensigt"
 * subject ^short = "[DK] indsatssubjekt"
 * activity.reference ^short = "[DK] indsatsAnledning"
-* activity.detail.reasonReference ^short = "[DK] indsatsbegrundelse"
+//* activity.detail.reasonReference ^short = "[DK] indsatsbegrundelse"
 * activity.outcomeReference ^short = "[DK] indsatsgennemførtAktivitet"
 * activity.detail.status ^short = "[DK] indsatsAktivitetsstatus"
 * activity.detail.statusReason ^short = "[DK] indsatsAktivitetForklaringAfStatus"
-* activity.detail.scheduledTiming.repeat.boundsPeriod.start ^short = "[DK] indsatsAktivitetPlanlagtOpstartsdato"
+//* activity.detail.scheduledTiming.repeat.boundsPeriod.start ^short = "[DK] indsatsAktivitetPlanlagtOpstartsdato"
 * activity.detail.scheduledTiming.repeat.count ^short = "[DK] indsatsAktivitetAntalTræningsgange"
 * activity.detail.scheduledTiming.repeat.duration ^short = "[DK] indsatsAktivitetLængdeAfTræningsgange"
 * activity.detail.scheduledTiming.repeat.durationUnit ^short = "[DK] indsatsAktivitetLængdeAfTræningsgangeEnhed"
 * activity.detail.performer ^short = "[DK] indsatsleverandør"
-* extension[interventiontype] ^short = "[DK] interventionstype, individuel eller gruppe"
+* activity.detail.extension[interventiontype] ^short = "[DK] interventionstype, individuel eller gruppe"

@@ -15,33 +15,32 @@ Description:    "Referal used to represent information about the training-refera
 * reasonReference only Reference(kl-gateway-focus-condition)
 
 //Setting 0..0 cardinalities
-identifier 0..0
-instantiatesCanonical 0..0
-instantiatesUri 0..0
-basedOn 0..0
-replaces 0..0
-requisition 0..0
-category 0..0
-priority 0..0
-doNotPerform 0..0
-orderDetail 0..0
-quantity[x] 0..0
-encounter 0..0
-occurrence[x] 0..0
-asNeeded[x] 0..0
-authoredOn 0..0
-performerType 0..0
-performer 0..0
-locationCode 0..0
-locationReference 0..0
-reasonCode 0..0
-insurance 0..0
-supportingInfo 0..0
-specimen 0..0
-bodySite 0..0
-note 0..0
-patientInstruction 0..0
-relevantHistory 0..0
+* identifier 0..0
+* instantiatesCanonical 0..0
+* instantiatesUri 0..0
+* basedOn 0..0
+* replaces 0..0
+* requisition 0..0
+* category 0..0
+* priority 0..0
+* doNotPerform 0..0
+* orderDetail 0..0
+* quantity[x] 0..0
+* encounter 0..0
+* occurrence[x] 0..0
+* asNeeded[x] 0..0
+* performerType 0..0
+* performer 0..0
+* locationCode 0..0
+* locationReference 0..0
+* reasonCode 0..0
+* insurance 0..0
+* supportingInfo 0..0
+* specimen 0..0
+* bodySite 0..0
+* note 0..0
+* patientInstruction 0..0
+* relevantHistory 0..0
 
 //Adding shorts for Danish descriptions
 * requester ^short = "[DK] anledningAnsvarlig"
