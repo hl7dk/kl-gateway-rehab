@@ -1,8 +1,8 @@
 Profile: KLGateway140PlannedIntervention
 Parent: CarePlan
-Id: klgateway-140-planned-intervention
-Title: "140PlannedIntervention"
-Description: "Planned interventions for §140 training in Danish Municipalities."
+Id: klgateway-140-119-planned-intervention
+Title: "140119PlannedIntervention"
+Description: "Planned interventions for §140 rehabilitation and §119 prevention in Danish Municipalities."
 
 //Requirements
 * status ^definition = "Shall be either unknown, entered-in-error, or the status of the intervention at the time of reporting"
@@ -27,7 +27,7 @@ Description: "Planned interventions for §140 training in Danish Municipalities.
 * activity.detail.code.coding ^slicing.rules = #closed
 * activity.detail.code.coding contains level2 1..1 and level3 0..1 MS
 * activity.detail.code.coding[level2].system = "urn:oid:1.2.208.176.2.21"
-* activity.detail.code.coding[level2] from http://fhir.kl.dk/term/ValueSet/KLTrainingInterventionsFSIII
+* activity.detail.code.coding[level2] from KLInterventionsRP
 * activity.detail.code.coding[level3].system = "http://gateway.kl.dk/1.0/CodeSystem/LocallyDefinedInterventions"
 * activity.detail.code.coding[level3].code 1..1
 * activity.detail.code.coding[level3].display 1..1
@@ -46,7 +46,7 @@ Description: "Planned interventions for §140 training in Danish Municipalities.
 * activity.detail.extension[interventiontype] ^definition = "Type of intervention. Individual or group"
 
 // udkommenteret relation mellem tilstand og indsats
-//* activity.detail.reasonReference only Reference(klgateway-140-condition)
+//* activity.detail.reasonReference only Reference(klgateway-140-119-condition)
 //* activity.detail.reasonReference MS
 //* activity.detail.reasonReference ^definition = "Reason for this intervention. Must contain all conditions known to be addressed by this intervention"
 //* activity.detail.reasonReference ^type.aggregation = #bundled
