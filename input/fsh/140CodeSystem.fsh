@@ -39,3 +39,10 @@ Title: "InterventionTypes"
 Description: "A type stating whether the intervention id groups based or indivudual"
 * Tempcodes#2865f123-15a7-4a36-a514-32ea37c400ca "gruppebaseret indsats"
 * Tempcodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "individuel indsats"
+
+ValueSet: ServiceTypes140119
+Id: ServiceTypes140119
+Title: "ServiceTypes"
+Description: "The service types allowed in §140 and §119" 
+* $KLCommonCodes#7fc66c15-0cb3-4c89-9e18-f3a01e6a6592	//Træning
+* $KLCommonCodes#a71921ea-fe83-441d-933b-cc21d0b3c8c3	//Sundhedsfremme og forebyggelse

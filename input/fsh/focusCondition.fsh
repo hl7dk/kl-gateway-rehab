@@ -17,19 +17,14 @@ Description:    "Conditions which may be used to express the problem of a citize
 // * code.coding[ICD10codes].system = "urn:oid:1.2.208.176.2.4.12"
 
 //Implementation based on dk-core
-* code.coding.system = "urn:oid:1.2.208.176.2.4.12"
+//* code.coding.system = "urn:oid:1.2.208.176.2.4.12"
 * code.coding[FSIIIConditionCode] 0..0
 * code.coding[SCTConditionCode] 0..0
 * code.coding[FFBConditionCode] 0..0
-* code.coding[ICPC2code] 0..0
-
-* extension[conditionLastAssertedDate] 0..0
-* extension[notFollowedAnymore] 0..0
-* extension[dueTo] 0..0
+//* code.coding[ICPC2code] 0..0
 
 //Specifying datatype of abatement, subject, asserter and evidence
 * subject only Reference(klgateway-care-citizen)
-
 
 //Setting other attributes to 0..0
 * identifier 0..0
@@ -50,6 +45,9 @@ Description:    "Conditions which may be used to express the problem of a citize
 * note 0..0
 * evidence 0..0
 * stage 0..0
+* extension[conditionLastAssertedDate] 0..0
+* extension[notFollowedAnymore] 0..0
+* extension[dueTo] 0..0
 
 //Adding shorts, to make danish descriptions available
 

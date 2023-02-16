@@ -3,40 +3,25 @@ Parent: CarePlan
 Id: klgateway-140-planned-intervention
 Title: "140PlannedIntervention"
 Description: "Planned interventions for §140 training in Danish Municipalities."
-* identifier ..0
-* instantiatesCanonical ..0
-* instantiatesUri ..0
-* basedOn ..0
-* replaces ..0
-* partOf ..0
+
+//Requirements
 * status ^definition = "Shall be either unknown, entered-in-error, or the status of the intervention at the time of reporting"
 * intent = #plan
-* category ..0
-* title ..0
-* description ..0
-* subject only Reference(klgateway-care-citizen)
+* activity.detail.status ^definition = "Shall be either unknown, or cancelled, or the activity status of the intervention at the time of reporting"
+* activity.detail.statusReason from CancellationTypes
+
+* subject only Reference(klgateway-care-citizen) //borger
 * subject ^type.aggregation = #bundled
-* encounter ..0
 * period 1..1
-* period.start 1..1
-* created ..0
-* author ..0
-* contributor ..0
-* careTeam 0..0
-* addresses ..0
-* supportingInfo ..0
-* goal ..0
+* period.start 1..1 //Bevillingsdato
+//period.end er mulig men ikke obligatorisk
 * activity 1..1
-* activity.outcomeCodeableConcept ..0
-* activity.outcomeReference ..0
-* activity.progress ..0
-* activity.reference only Reference(klgateway-140-servicerequest)
+* activity.outcomeReference only Reference(klgateway-140-encounter) //kontakter
+* activity.outcomeReference ^type.aggregation = #bundled
+* activity.reference only Reference(klgateway-140-119-servicerequest) //GGOP'en
 * activity ^type.aggregation = #bundled
-* activity.detail 1..
-* activity.detail.kind ..0
-* activity.detail.instantiatesCanonical ..0
-* activity.detail.instantiatesUri ..0
-* activity.detail.code 1..1
+* activity.detail 1.. 
+* activity.detail.code 1..1 //Indsatskoder niveau 2 og 3
 * activity.detail.code.coding ^slicing.discriminator.type = #value
 * activity.detail.code.coding ^slicing.discriminator.path = "system"
 * activity.detail.code.coding ^slicing.rules = #closed
@@ -48,25 +33,55 @@ Description: "Planned interventions for §140 training in Danish Municipalities.
 * activity.detail.code.coding[level3].display 1..1
 * activity.detail.code.coding[level3] ^definition = "Shall contain locally defined code if it is a locally defined level 3 intervention"
 * activity.detail.reasonCode ..0
-* activity.detail.reasonReference only Reference(klgateway-140-condition)
-* activity.detail.reasonReference MS
-* activity.detail.reasonReference ^definition = "Reason for this intervention. Must contain all conditions known to be addressed by this intervention"
-* activity.detail.reasonReference ^type.aggregation = #bundled
-* activity.detail.goal ..0
-* activity.detail.status ^definition = "Shall be either unknown, entered-in-error, or the activity status of the intervention at the time of reporting"
-* activity.detail.statusReason from CancellationTypes
-* activity.detail.doNotPerform ..0
-* activity.detail.scheduled[x] ..1
-* activity.detail.scheduledString ..0
-* activity.detail.scheduledPeriod ..0
-* activity.detail.scheduledTiming.code 0..0
-* activity.detail.scheduledTiming.event 0..0
+* activity.detail.scheduled[x] ..1 //gør det muligt at lægge gentagelser på
 * activity.detail.scheduledTiming.repeat.boundsPeriod.start 1..1
-* activity.detail.scheduledTiming.repeat.boundsPeriod.end 0..0
 * activity.detail.scheduledTiming.repeat.count 1..1
 * activity.detail.scheduledTiming.repeat.duration 1..1
 * activity.detail.scheduledTiming.repeat.durationUnit 1..1
 * activity.detail.scheduledTiming.repeat.durationUnit = http://unitsofmeasure.org#min
+* activity.detail.performer 1..1 //indsatsudfører
+* activity.detail.performer only Reference(klgateway-care-organization)
+* activity.detail.performer ^type.aggregation = #bundled
+* activity.detail.extension contains klgateway-140-interventiontype-extension named interventiontype 0..1 MS //Extension as close to activity.detail.code as possible
+* activity.detail.extension[interventiontype] ^definition = "Type of intervention. Individual or group"
+
+// udkommenteret relation mellem tilstand og indsats
+//* activity.detail.reasonReference only Reference(klgateway-140-condition)
+//* activity.detail.reasonReference MS
+//* activity.detail.reasonReference ^definition = "Reason for this intervention. Must contain all conditions known to be addressed by this intervention"
+//* activity.detail.reasonReference ^type.aggregation = #bundled
+
+//0..0 kardinaliteter
+* identifier ..0
+* instantiatesCanonical ..0
+* instantiatesUri ..0
+* basedOn ..0
+* replaces ..0
+* partOf ..0
+* category ..0
+* title ..0
+* description ..0
+* encounter ..0
+* created ..0
+* author ..0
+* contributor ..0
+* careTeam 0..0
+* addresses ..0
+* supportingInfo ..0
+* goal ..0
+* activity.outcomeCodeableConcept ..0
+* activity.progress ..0
+* activity.detail.kind ..0
+* activity.detail.instantiatesCanonical ..0
+* activity.detail.instantiatesUri ..0
+* activity.detail.reasonReference 0..0
+* activity.detail.goal ..0
+* activity.detail.doNotPerform ..0
+* activity.detail.scheduledString ..0
+* activity.detail.scheduledPeriod ..0
+* activity.detail.scheduledTiming.code 0..0
+* activity.detail.scheduledTiming.event 0..0
+* activity.detail.scheduledTiming.repeat.boundsPeriod.end 0..0
 * activity.detail.scheduledTiming.repeat.frequency 0..0
 * activity.detail.scheduledTiming.repeat.durationMax 0..0
 * activity.detail.scheduledTiming.repeat.boundsDuration 0..0
@@ -74,16 +89,11 @@ Description: "Planned interventions for §140 training in Danish Municipalities.
 * activity.detail.scheduledTiming.repeat.countMax 0..0
 * activity.detail.scheduledTiming.repeat.dayOfWeek 0..0
 * activity.detail.location ..0
-* activity.detail.performer 1..1
-* activity.detail.performer only Reference(klgateway-care-organization)
-* activity.detail.performer ^type.aggregation = #bundled
 * activity.detail.product[x] ..0
 * activity.detail.dailyAmount ..0
 * activity.detail.quantity ..0
 * activity.detail.description ..0
 * note ..0
-* activity.detail.extension contains klgateway-140-interventiontype-extension named interventiontype 0..1 MS //Extension as close to activity.detail.code as possible
-* activity.detail.extension[interventiontype] ^definition = "Type of intervention. Individual or group"
 
 //Danish descriptions
 * activity.detail.code.coding ^short = "[DK] indsatsskode"
@@ -102,4 +112,8 @@ Description: "Planned interventions for §140 training in Danish Municipalities.
 * activity.detail.scheduledTiming.repeat.duration ^short = "[DK] indsatsAktivitetLængdeAfTræningsgange"
 * activity.detail.scheduledTiming.repeat.durationUnit ^short = "[DK] indsatsAktivitetLængdeAfTræningsgangeEnhed"
 * activity.detail.performer ^short = "[DK] indsatsleverandør"
-* activity.detail.extension[interventiontype] ^short = "[DK] interventionstype, individuel eller gruppe"
+* activity.detail.extension[interventiontype] ^short = "[DK] indsatstype, individuel eller gruppe"
+
+//make fhir path that makes cancallation type mandatory if status is cancelled or stopped.
+//Gør scheduled timing mandatory hvis indsatsen er bestemte typer træning, og ellers ikke tilladt.
+//gør indsatstypen mandatory, hvis indsatsen er bestemte typer træning, og ellers ikke tilladt. 

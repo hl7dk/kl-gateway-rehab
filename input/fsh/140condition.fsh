@@ -40,14 +40,11 @@ Description: "Detailed information about condition relating to §140 care pathwa
 * stage ..0
 * evidence ..0
 * note ..0
-* extension contains klgateway-care-follow-up-encounter-extension named followUpEncounter 0..1 MS
-* extension[followUpEncounter] ^definition = "Encounter for following up on this condition. Must be present if a follow-up date is known"
 
 //Danish descriptions
 * code.coding ^short = "[DK] §140 tilstandskode"
 * clinicalStatus ^short = "[DK] tilstandsstatus"
 * verificationStatus ^short = "[DK] tilstandsstatus"
 * recordedDate ^short = "[DK] tilstandsoprettelsestid" 
-* extension[followUpEncounter] ^short = "[DK] tilstandsplanlagtOpfølgning" 
 * subject ^short = "[DK] tilstandssubjekt" 
 * category.coding ^short = "[DK] tilstandsfokus"

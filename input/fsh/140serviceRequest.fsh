@@ -1,18 +1,17 @@
-Profile:        KLGateway140ServiceRequest
+Profile:        KLGateway140119ServiceRequest
 Parent:         ServiceRequest
-Id:             klgateway-140-servicerequest
-Title:          "140ServiceRequest"
+Id:             klgateway-140-119-servicerequest
+Title:          "ServiceRequest"
 Description:    "Referal used to represent information about the training-referal (GGOP) from a hospital to a Danish municipalities"
 //Requirement pertaining to §140
 * requester 1..1
 * requester only Reference(klgateway-care-organization) //organization used for people from the outside, KLCommonPractitioner for internal requests
 * requester ^type.aggregation = #bundled
-* code.coding = $KLCommonCodes#7fc66c15-0cb3-4c89-9e18-f3a01e6a6592 (exactly)
-* orderDetail 0..0
+* code.coding from ServiceTypes140119
 * subject only Reference(klgateway-care-citizen)
 * subject ^type.aggregation = #bundled
 * authoredOn 1..1
-* reasonReference only Reference(kl-gateway-focus-condition)
+* reasonReference only Reference(kl-gateway-focus-condition) //May be there (140) or not (119)
 
 //Setting 0..0 cardinalities
 * identifier 0..0
@@ -41,6 +40,7 @@ Description:    "Referal used to represent information about the training-refera
 * note 0..0
 * patientInstruction 0..0
 * relevantHistory 0..0
+* orderDetail 0..0
 
 //Adding shorts for Danish descriptions
 * requester ^short = "[DK] anledningAnsvarlig"
