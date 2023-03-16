@@ -1,7 +1,7 @@
-Profile: KLGatewayCareCitizen
+Profile: KLGateway140Citizen
 Parent: http://hl7.dk/fhir/core/StructureDefinition/dk-core-patient
-Id: klgateway-care-citizen
-Title: "CareCitizen"
+Id: klgateway-140-citizen
+Title: "KLGateway140Citizen"
 Description: "Administrative information about a citizen receiving care or care related services."
 * identifier 1..1
 * identifier only dk-core-cpr-identifier

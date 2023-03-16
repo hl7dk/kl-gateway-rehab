@@ -1,8 +1,8 @@
-Profile: KLGatewayCareOrganization
+Profile: KLGateway140Organization
 Parent: http://hl7.dk/fhir/core/StructureDefinition/dk-core-organization
-Id: klgateway-care-organization
-Title: "CareOrganization"
-Description: "Organization as expressed in KLgateway."
+Id: klgateway-140-organization
+Title: "KLGateway140Organization"
+Description: "Organization as expressed in KLGateway for rehabilitation."
 * identifier 1..1
 * identifier[EAN-ID] 0..0
 * identifier[KOMBIT-ORG-ID] 0..1
@@ -21,3 +21,5 @@ Description: "Organization as expressed in KLgateway."
 * partOf 0..0
 * endpoint 0..0
 * contact 0..0
+
+* identifier ^short = "[DK] organisationsid"

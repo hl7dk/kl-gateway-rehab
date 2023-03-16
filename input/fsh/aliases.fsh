@@ -3,3 +3,5 @@ Alias: $ConditionCategory = http://terminology.hl7.org/CodeSystem/condition-cate
 Alias: $VerificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status
 Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias: $KLCommonCodes = http://fhir.kl.dk/term/CodeSystem/CommonCareSocialCodes
+Alias: $KLConditionCodes140 = http://fhir.kl.dk/term/ValueSet/KLConditionCodesTheraphy
+Alias: $FSIII = http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII //http://fhir.kl.dk/term/CodeSystem/FSIII

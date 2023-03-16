@@ -1,7 +1,7 @@
 Profile: KLGateway140Condition
 Parent: Condition
 Id: klgateway-140-condition
-Title: "140Condition"
+Title: "KLGateway140Condition"
 Description: "Detailed information about condition relating to §140 care pathways"
 * identifier ..0
 * clinicalStatus.coding 1..1
@@ -26,7 +26,7 @@ Description: "Detailed information about condition relating to §140 care pathwa
 * category.text ..0
 * severity 0..0
 * code 1..1
-* code from KLConditionCodesRP (required)
+* code from $KLConditionCodes140 (required)
 * code.coding 1..1
 * bodySite ..0
 * subject only Reference(klgateway-care-citizen)

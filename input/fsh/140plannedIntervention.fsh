@@ -27,7 +27,7 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.code.coding ^slicing.rules = #closed
 * activity.detail.code.coding contains level2 1..1 and level3 0..1 MS
 * activity.detail.code.coding[level2].system = "urn:oid:1.2.208.176.2.21"
-* activity.detail.code.coding[level2] from KLInterventionsRP
+* activity.detail.code.coding[level2] from $KLInterventionCodes140
 * activity.detail.code.coding[level3].system = "http://gateway.kl.dk/1.0/CodeSystem/LocallyDefinedInterventions"
 * activity.detail.code.coding[level3].code 1..1
 * activity.detail.code.coding[level3].display 1..1
@@ -42,7 +42,6 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.performer 1..1 //indsatsudfører
 * activity.detail.performer only Reference(klgateway-care-organization)
 * activity.detail.performer ^type.aggregation = #bundled
-* activity.detail.extension contains klgateway-140-interventiontype-extension named interventiontype 0..1 MS //Extension as close to activity.detail.code as possible
 * activity.detail.extension[interventiontype] ^definition = "Type of intervention. Individual or group"
 
 // udkommenteret relation mellem tilstand og indsats

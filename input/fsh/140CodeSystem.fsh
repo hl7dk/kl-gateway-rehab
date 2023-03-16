@@ -10,8 +10,23 @@ Description: "Tempcodes to be implemented in KL-term"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 #f8436c2e-af1c-44fe-939d-473b518dd01d "Aktivt fravalg pga. økonomi ifm. transport" "Borger har behov, men har foretaget et aktivt fravalg pga. den omkostning der er forbundet med transport til det sted indsatsen tilbydes"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 #8371b769-4bfb-4ac8-b130-d91c54784a56 "Aktivt fravalg pga. logisik ifm. transport" "Borger har behov, men har foretaget et aktivt fravalg pga. den logistiske udfordring det er mht. transport, at nå frem til det sted indsatsen tilbydes"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 #a3f2bd01-078b-486e-81be-797d192ad7bd "Aktivt fravalg pga. anden træning" "Borger har behov, men har foretaget et aktivt fravalg fordi han/hun er påbegyndt træning i andet regi fx fitnesscenter"
-* #2865f123-15a7-4a36-a514-32ea37c400ca "gruppebaseret indsats"
-* #8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "individuel indsats"
+* #029cb8af-08d5-4b8f-a911-7dfcb7c27483 "ADL-træning på hold"
+* #aeb3d2b2-a551-4c3a-86e2-d165c1aaf350 "ADL-træning individuelt"
+* #8728bce0-90c7-40c8-8c2f-f5c266dad02d "Fysisk træning på hold"
+* #fb26c466-14c9-49a1-b69b-a6339f3890e4 "Fysisk træning, individuelt"
+* #c6192bb0-266f-43de-976d-e78335c5be0b "Funktionstræning på hold"
+* #5002d3be-ee05-4ff7-9fd4-a0d815bd6cbd "Funktionstræning individuelt"
+* #6f1107a4-25d3-4d9a-bf35-bd1cf472d183 "Kognitiv træning på hold"
+* #7d877253-e385-405c-8822-7fc3d2e7f3b0 "Kognitiv træning individuelt"
+* #e5802281-a895-4a3f-868f-c50f1759cc00 "Psykomotorisk træning på hold"
+* #8d9eb012-0f2e-4e3f-8ac9-8f3d87cfdc3b "Psykomotorisk træning individuelt"
+* #4dbd9b85-8b89-45de-bf6f-9509aa122089 "Vejledning og undervisning på hold"
+* #0a995193-b6ab-413b-8692-3456992807d6 "Vejledning og undervisning individuelt"
+* #722cb0e4-0e21-4442-af04-fe5e4ce4c540 "Opfølgning på hold"
+* #31de6eb9-eae2-4759-81c4-8e2323c73101 "Opfølgning individuelt"
+
+//* #2865f123-15a7-4a36-a514-32ea37c400ca "gruppebaseret indsats"
+//* #8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "individuel indsats"
 
 
 ValueSet: CancellationTypes
@@ -26,21 +41,13 @@ Description: "Cancellation valueset, to be implemented in KL-term and FKI"
 * Tempcodes#8371b769-4bfb-4ac8-b130-d91c54784a56 //"Aktivt fravalg pga. logisik ifm. transport"
 * Tempcodes#a3f2bd01-078b-486e-81be-797d192ad7bd //"Aktivt fravalg pga. anden træning"
 
-ValueSet: ExtendedEncounterTypes
-Id: ExtendedEncounterTypes
-Title: "ExtendedEncounterTypes"
-Description: "Extension on encountertype valueset, to be implemented in KL-term and FKI"
-* ^experimental = false
-* include codes from valueset http://fhir.kl.dk/term/ValueSet/KLEncounterTypes
+// ValueSet: ExtendedEncounterTypes
+// Id: ExtendedEncounterTypes
+// Title: "ExtendedEncounterTypes"
+// Description: "Extension on encountertype valueset, to be implemented in KL-term and FKI"
+// * ^experimental = false
+// * include codes from valueset http://fhir.kl.dk/term/ValueSet/KLEncounterTypes
 //* Tempcodes#7273c0b7-1a0d-4c4a-a202-c014b1ddd4a0
-
-ValueSet: InterventionTypes
-Id: InterventionTypes
-Title: "InterventionTypes"
-Description: "A type stating whether the intervention id groups based or indivudual"
-* ^experimental = false
-* Tempcodes#2865f123-15a7-4a36-a514-32ea37c400ca "gruppebaseret indsats"
-* Tempcodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "individuel indsats"
 
 ValueSet: ServiceTypes140
 Id: ServiceTypes140
@@ -49,14 +56,10 @@ Description: "The service types allowed in §140"
 * ^experimental = false
 * $KLCommonCodes#7fc66c15-0cb3-4c89-9e18-f3a01e6a6592	//Træning
 
-ValueSet: KLConditionCodesRP
-Title: "KLTilstandKoderRehab_forebyggelse"
-Description: "Danish municipality FSIII condition codes for rehabilitation"
+ValueSet: KLInterventionCodes140
+Id: KLInterventionCodes140
+Title: "KLInterventionCodes140"
 * ^experimental = false
-* codes from valueset http://fhir.kl.dk/term/ValueSet/KLConditionCodesTheraphy
+* 
 
-ValueSet: KLInterventionsRP
-Title: "KLIndsatserFSIII" 
-Description: "Interventions as described by FSIII"
-* ^experimental = false
-* codes from valueset http://fhir.kl.dk/term/ValueSet/KLTrainingInterventionsFSIII
+http://fhir.kl.dk/term/ValueSet/KLTrainingInterventionsFSIII
