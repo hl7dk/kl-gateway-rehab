@@ -1,7 +1,7 @@
 ### Scope and usage
-A Condition is reported as long af a condition is true and active, for a living citizen that recieves §140 rehabilitation or §119 prevention interventions in Danish municipalities.
+A Condition is reported as long af a condition is true and active, for a living citizen that recieves §140 rehabilitation interventions in Danish municipalities.
 
-Conditions are always defined by Condition.code, which originates from FSIII. Only conditions related to Prevention SUL §119 (FSIII) and Training SUL §140 (FSIII) are allowed.
+Conditions are always defined by Condition.code, which originates from FSIII. Only conditions related to Training SUL §140 (FSIII) are allowed.
 
 Condition.recordedDate is the date where the condition was first recorded, NOT the date where the problem first known to be present.
 
@@ -13,7 +13,7 @@ Ending a condition have two meanings. The first is that the citizen no longer ha
 
 To sum up, A condition should be reported to Kl-gateway in the first report after it first occurs in the record. The condition should be reported again if it changes. In this implementation, it changes under two circumstances:
 *  The citizen does not have the problem any more. In this case, set Condition.clinicalStatus to inactive and report this condition to KL-Gateway in the next report.
-* The citizen still has the problem, but the rehabilitation/prevention unit isn't doing anything more about it because the case is closed. In this case, remove the category with the problem-list-item flag from the model, and report this condition to KL-Gateway in the next report.
+* The citizen still has the problem, but the rehabilitation unit isn't doing anything more about it because the case is closed. In this case, remove the category with the problem-list-item flag from the model, and report this condition to KL-Gateway in the next report.
 
 ### Conversions between Danish information model and FHIR-profile
 Nedenstående tabel oversætter mellem de attributter der er defineret i den fælleskommunale informationsmodel (FKI), definerer kort den enkelte attribut på dansk og specificere hvilke af FHIR-profilens atributter der skal bruges til specifikation af indholdet

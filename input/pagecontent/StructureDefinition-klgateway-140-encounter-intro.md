@@ -8,7 +8,7 @@ In the context of the rehabilitation repporting, all Encounter.status values may
 
 Encounter.class is mandatory in FHIR. In Danish municipalities, the values are used as follows.
 * Visits in citizens homes have the code 'HH' home health, the code is also used for services that are not strictly health related e.g. help with cleaning. This code is also used, even if the activities stretch outside the citizens residence e.g. a physiotherapist that want to see a citizen walk outside, or a social worker helping with shpping activities.
-* Sessions where the citizens visit municipality facilities e.g. for training or health prevention have the code "AMB" ambulatory.
+* Sessions where the citizens visit municipality facilities e.g. for training have the code "AMB" ambulatory.
 * For telehealth/telecare encounters, where the patient is contacted by telephone, by teleconference or e-mail, the code is 'VR' virtual.
 
 All encounters should be related to the ServiceRequest (request for rehabilitation according to §140 in the health act), so that it may be tracked which request resulted in what activities. Use Encounter.basedOn. An encounter may only be related to one ServiceRequest. If a second (updated) request is recieved to replace an existing one, while a citizen already recieves rehabilitation, Encounter.basedOn should point to the new service request.

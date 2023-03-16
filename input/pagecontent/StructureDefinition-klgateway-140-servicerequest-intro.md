@@ -4,7 +4,7 @@ This model is used to represent when a municipality recieves a request for rehab
 The ServiceRequest, should have the sending organisation as the requester i.e the hospital that sends the request (GGOP), and intent should always be "plan". The status attribute should be used according to the FHIR-guidance. The requester is mandatory for §140.
 
 
-SeviceRequest.reasonReference (anledningsbegrundelse) is only used, if the code or codes were recieved in a MedCom message as a referal diagnosis (GOP eller Den gode henvisning). The reasonReference describes this through a reference to FocusCondition, which again uses diagnosis codes to describe the problem/diagnosis, that led the hospital to request §140 rehabilitation og §119 prevention. 
+SeviceRequest.reasonReference (anledningsbegrundelse) is only used, if the code or codes were recieved in a MedCom message as a referal diagnosis (GOP eller Den gode henvisning). The reasonReference describes this through a reference to FocusCondition, which again uses diagnosis codes to describe the problem/diagnosis, that led the hospital to request §140 rehabilitation. 
 
 ServiceRequest.code.coding is used to state, what kind of interventions the requester wants for the citizen. In this use case, the value is always 'Træning' or 'Sundhedsfremme og forebyggelse'. 
 

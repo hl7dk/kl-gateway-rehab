@@ -1,5 +1,5 @@
 # Scope and usage
-The PlannedIntervention for §140 and §119 is used whenever a rehabilitation or prevention intervention is planned for a citizen in Danish municipalities.
+The PlannedIntervention for §140 is used whenever a rehabilitation intervention is planned for a citizen in Danish municipalities.
 
 CarePlan.activity.detail.code.coding holds the intervention code, which has to come from FSIII. The intervention can be delivered in a group or individually, which is documented using CarePlan.activity.detail.extension:interventiontype. For certain types of interventions , the intervention can be delivered individually or group based (Funktionstræning, Fysisk træning, ADL-træning, Psykomotorisk træning, Vejledning og undervisning, Kognitiv træning). This is documented using CarePlan.activity.detail.extension:interventiontype.
 

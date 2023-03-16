@@ -1,17 +1,17 @@
-Profile:        KLGateway140119ServiceRequest
+Profile:        KLGateway140ServiceRequest
 Parent:         ServiceRequest
-Id:             klgateway-140-119-servicerequest
+Id:             klgateway-140-servicerequest
 Title:          "ServiceRequest"
 Description:    "Referal used to represent information about the training-referal (GGOP) from a hospital to a Danish municipalities"
 //Requirement pertaining to §140
 * requester 1..1
 * requester only Reference(klgateway-care-organization) //organization used for people from the outside, KLCommonPractitioner for internal requests
 * requester ^type.aggregation = #bundled
-* code.coding from ServiceTypes140119
+* code.coding from ServiceTypes140
 * subject only Reference(klgateway-care-citizen)
 * subject ^type.aggregation = #bundled
 * authoredOn 1..1
-* reasonReference only Reference(kl-gateway-focus-condition) //May be there (140) or not (119)
+* reasonReference only Reference(kl-gateway-focus-condition) //May be there (140)
 
 //Setting 0..0 cardinalities
 * identifier 0..0

@@ -1,8 +1,8 @@
 Profile: KLGateway140PlannedIntervention
 Parent: CarePlan
-Id: klgateway-140-119-planned-intervention
-Title: "140119PlannedIntervention"
-Description: "Planned interventions for §140 rehabilitation and §119 prevention in Danish Municipalities."
+Id: klgateway-140-planned-intervention
+Title: "KLGateway140PlannedIntervention"
+Description: "Planned interventions for §140 rehabilitation in Danish Municipalities."
 
 //Requirements
 * status ^definition = "Shall be either unknown, entered-in-error, or the status of the intervention at the time of reporting"
@@ -18,7 +18,7 @@ Description: "Planned interventions for §140 rehabilitation and §119 preventio
 * activity 1..1
 * activity.outcomeReference only Reference(klgateway-140-encounter) //kontakter
 * activity.outcomeReference ^type.aggregation = #bundled
-* activity.reference only Reference(klgateway-140-119-servicerequest) //GGOP'en
+* activity.reference only Reference(klgateway-140-servicerequest) //GGOP'en
 * activity ^type.aggregation = #bundled
 * activity.detail 1.. 
 * activity.detail.code 1..1 //Indsatskoder niveau 2 og 3
@@ -46,7 +46,7 @@ Description: "Planned interventions for §140 rehabilitation and §119 preventio
 * activity.detail.extension[interventiontype] ^definition = "Type of intervention. Individual or group"
 
 // udkommenteret relation mellem tilstand og indsats
-//* activity.detail.reasonReference only Reference(klgateway-140-119-condition)
+//* activity.detail.reasonReference only Reference(klgateway-140-condition)
 //* activity.detail.reasonReference MS
 //* activity.detail.reasonReference ^definition = "Reason for this intervention. Must contain all conditions known to be addressed by this intervention"
 //* activity.detail.reasonReference ^type.aggregation = #bundled

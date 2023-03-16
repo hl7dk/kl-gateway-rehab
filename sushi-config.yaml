@@ -4,7 +4,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: kl.dk.fhir.rp
 canonical: http://fhir.kl.dk/rp
-name: KLGatewayRehabPrevention
+name: KLGatewayRehab
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1

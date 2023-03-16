@@ -2,7 +2,7 @@ CodeSystem: Tempcodes
 Id: Tempcodes
 Title: "Tempcodes"
 Description: "Tempcodes to be implemented in KL-term"
-* #7273c0b7-1a0d-4c4a-a202-c014b1ddd4a0 "Første kontakt i forløb"
+//* #7273c0b7-1a0d-4c4a-a202-c014b1ddd4a0 "Første kontakt i forløb"
 * #4bbf6d6a-a1c6-41c2-b8c1-7352b7378adf "Ikke yderligere behov (borger-vurderet)""Borger vurderer, at han/hun ikke har yderligere behov og afslutter derfor før tid"
 * #a63b6aa6-7d56-4e67-a5b3-d73f6d262af5 "Ikke yderligere behov (fagperson-vurderet)" "Fagperson vurderer, at borger ikke har yderligere behov og afslutter derfor før tid"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 "Aktivt fravalg" "Borger har behov, men har foretaget et aktivt fravalg"
@@ -32,7 +32,7 @@ Title: "ExtendedEncounterTypes"
 Description: "Extension on encountertype valueset, to be implemented in KL-term and FKI"
 * ^experimental = false
 * include codes from valueset http://fhir.kl.dk/term/ValueSet/KLEncounterTypes
-* Tempcodes#7273c0b7-1a0d-4c4a-a202-c014b1ddd4a0
+//* Tempcodes#7273c0b7-1a0d-4c4a-a202-c014b1ddd4a0
 
 ValueSet: InterventionTypes
 Id: InterventionTypes
@@ -42,24 +42,21 @@ Description: "A type stating whether the intervention id groups based or indivud
 * Tempcodes#2865f123-15a7-4a36-a514-32ea37c400ca "gruppebaseret indsats"
 * Tempcodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "individuel indsats"
 
-ValueSet: ServiceTypes140119
-Id: ServiceTypes140119
+ValueSet: ServiceTypes140
+Id: ServiceTypes140
 Title: "ServiceTypes"
-Description: "The service types allowed in §140 and §119" 
+Description: "The service types allowed in §140" 
 * ^experimental = false
 * $KLCommonCodes#7fc66c15-0cb3-4c89-9e18-f3a01e6a6592	//Træning
-* $KLCommonCodes#a71921ea-fe83-441d-933b-cc21d0b3c8c3	//Sundhedsfremme og forebyggelse
 
 ValueSet: KLConditionCodesRP
 Title: "KLTilstandKoderRehab_forebyggelse"
-Description: "Danish municipality FSIII condition codes for rehabilitation and prevention"
+Description: "Danish municipality FSIII condition codes for rehabilitation"
 * ^experimental = false
 * codes from valueset http://fhir.kl.dk/term/ValueSet/KLConditionCodesTheraphy
-* codes from valueset http://fhir.kl.dk/term/ValueSet/KLConditionCodesPrevention
 
 ValueSet: KLInterventionsRP
 Title: "KLIndsatserFSIII" 
 Description: "Interventions as described by FSIII"
 * ^experimental = false
 * codes from valueset http://fhir.kl.dk/term/ValueSet/KLTrainingInterventionsFSIII
-* codes from valueset http://fhir.kl.dk/term/ValueSet/KLPreventionInterventionsFSIII
