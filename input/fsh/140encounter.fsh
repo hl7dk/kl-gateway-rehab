@@ -1,19 +1,18 @@
 Profile: KLGateway140Encounter
 Parent: Encounter
 Id: klgateway-140-encounter
-Title: "140CareEncounter"
+Title: "KLGateway140Encounter"
 Description: "Encounter for first planned visits and all executed activities in a §140 care pathway"
 * identifier ..0
 * statusHistory ..0
-* class = $v3-ActCode#HH
 * class.version ..0
 * class.display ..0
 * class.userSelected ..0
 * classHistory ..0
-* type from ExtendedEncounterTypes (required)
-* type.coding 1..
+//* type from ExtendedEncounterTypes (required)
+* type.coding 0..0
 * type.coding.version ..0
-* type.coding.display ..0
+* type.coding.display 0..0
 * type.coding.userSelected ..0
 * type.text ..0
 * serviceType ..0
@@ -41,9 +40,8 @@ Description: "Encounter for first planned visits and all executed activities in 
 
 //Danish descriptions
 * status ^short = "[DK] kontaktstatus"
-* type.coding ^short = "[DK] kontakttype"
+* class ^short = "[DK] kontaktklasse"
 * period.start ^short = "[DK] kontaktstart"
 * period.end ^short = "[DK] kontaktslut"
 * subject ^short = "[DK] kontaktsubjekt"
-* class ^short = "[DK] kontaktklasse"
 * basedOn ^short = "[DK] kontaktanledning"

@@ -1,7 +1,8 @@
 ## Scope and usage
-This model is used to represent when a municipality recieves a request for rehabilitation according to §140 in the health act (DK: §140 træning ifølge sundhedsloven), or for prevention according to §119 in the health act.
+This model is used to represent when a municipality recieves a request for rehabilitation according to §140 in the health act (DK: §140 træning ifølge sundhedsloven).
 
-The ServiceRequest, should have the sending organisation as the requester i.e the hospital that sends the §140 ServiceRequest (GGOP), and intent should always be "plan". The status attribute should be used according to the FHIR-guidance. The requester is mandatory for §140, but in case of §119 it is only required if the organisation or person that requests the service does so using a MedCom message, and the SOR-code can be drawn automatically from here. Requests recieved via phone e.g. from GP's, citizens or next-of-kin should be reported without requester.
+The ServiceRequest, should have the sending organisation as the requester i.e the hospital that sends the request (GGOP), and intent should always be "plan". The status attribute should be used according to the FHIR-guidance. The requester is mandatory for §140.
+
 
 SeviceRequest.reasonReference (anledningsbegrundelse) is only used, if the code or codes were recieved in a MedCom message as a referal diagnosis (GOP eller Den gode henvisning). The reasonReference describes this through a reference to FocusCondition, which again uses diagnosis codes to describe the problem/diagnosis, that led the hospital to request §140 rehabilitation og §119 prevention. 
 
