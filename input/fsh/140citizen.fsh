@@ -33,7 +33,7 @@ Description: "Administrative information about a citizen receiving care or care 
 * managingOrganization ^short = "[DK] journalførende organisation"
 
 Instance: TestPerson
-InstanceOf: KLGatewayCareCitizen
+InstanceOf: klgateway-140-citizen
 Description: "Test person used in the examples of the implementation guide."
 * identifier.use = #official
 * identifier.value = "0101010101"

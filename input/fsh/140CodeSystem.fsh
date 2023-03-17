@@ -60,6 +60,25 @@ ValueSet: KLInterventionCodes140
 Id: KLInterventionCodes140
 Title: "KLInterventionCodes140"
 * ^experimental = false
-* 
+* $FSIII#1130ad70-6553-490d-87f8-5e8941687a0c //Terapeutfaglig udredning
+* $FSIII#f8ac963c-6ec5-4ec5-bd90-a22fea4e2d16 //Manuel behandling
+* $FSIII#ba3e17bd-d4aa-4848-acad-25adc8285c19 //Koordinering og kommunikation
 
-http://fhir.kl.dk/term/ValueSet/KLTrainingInterventionsFSIII
+ValueSet: KLInterventionCodes140temp
+Id: KLInterventionCodes140temp
+Title: "KLInterventionCodes140temp"
+* ^experimental = false
+* Tempcodes#029cb8af-08d5-4b8f-a911-7dfcb7c27483 //"ADL-træning på hold"
+* Tempcodes#aeb3d2b2-a551-4c3a-86e2-d165c1aaf350 //"ADL-træning individuelt"
+* Tempcodes#8728bce0-90c7-40c8-8c2f-f5c266dad02d //"Fysisk træning på hold"
+* Tempcodes#fb26c466-14c9-49a1-b69b-a6339f3890e4 //"Fysisk træning, individuelt"
+* Tempcodes#c6192bb0-266f-43de-976d-e78335c5be0b //"Funktionstræning på hold"
+* Tempcodes#5002d3be-ee05-4ff7-9fd4-a0d815bd6cbd //"Funktionstræning individuelt"
+* Tempcodes#6f1107a4-25d3-4d9a-bf35-bd1cf472d183 //"Kognitiv træning på hold"
+* Tempcodes#7d877253-e385-405c-8822-7fc3d2e7f3b0 //"Kognitiv træning individuelt"
+* Tempcodes#e5802281-a895-4a3f-868f-c50f1759cc00 //"Psykomotorisk træning på hold"
+* Tempcodes#8d9eb012-0f2e-4e3f-8ac9-8f3d87cfdc3b //"Psykomotorisk træning individuelt"
+* Tempcodes#4dbd9b85-8b89-45de-bf6f-9509aa122089 //"Vejledning og undervisning på hold"
+* Tempcodes#0a995193-b6ab-413b-8692-3456992807d6 //"Vejledning og undervisning individuelt"
+* Tempcodes#722cb0e4-0e21-4442-af04-fe5e4ce4c540 //"Opfølgning på hold"
+* Tempcodes#31de6eb9-eae2-4759-81c4-8e2323c73101 //"Opfølgning individuelt"

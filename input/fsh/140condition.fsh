@@ -29,7 +29,7 @@ Description: "Detailed information about condition relating to §140 care pathwa
 * code from $KLConditionCodes140 (required)
 * code.coding 1..1
 * bodySite ..0
-* subject only Reference(klgateway-care-citizen)
+* subject only Reference(klgateway-140-citizen)
 * subject ^type.aggregation = #bundled
 * abatement[x] ..0
 * encounter ..0

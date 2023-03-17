@@ -10,7 +10,7 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.status ^definition = "Shall be either unknown, or cancelled, or the activity status of the intervention at the time of reporting"
 * activity.detail.statusReason from CancellationTypes
 
-* subject only Reference(klgateway-care-citizen) //borger
+* subject only Reference(klgateway-140-citizen) //borger
 * subject ^type.aggregation = #bundled
 * period 1..1
 * period.start 1..1 //Bevillingsdato
@@ -25,24 +25,25 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.code.coding ^slicing.discriminator.type = #value
 * activity.detail.code.coding ^slicing.discriminator.path = "system"
 * activity.detail.code.coding ^slicing.rules = #closed
-* activity.detail.code.coding contains level2 1..1 and level3 0..1 MS
+* activity.detail.code.coding contains level2 0..1 and level2temp 0..1 and level3 0..1 MS
 * activity.detail.code.coding[level2].system = "urn:oid:1.2.208.176.2.21"
-* activity.detail.code.coding[level2] from $KLInterventionCodes140
+* activity.detail.code.coding[level2] from KLInterventionCodes140
+* activity.detail.code.coding[level2temp].system = Canonical(Tempcodes)
+* activity.detail.code.coding[level2temp] from KLInterventionCodes140temp
 * activity.detail.code.coding[level3].system = "http://gateway.kl.dk/1.0/CodeSystem/LocallyDefinedInterventions"
 * activity.detail.code.coding[level3].code 1..1
 * activity.detail.code.coding[level3].display 1..1
 * activity.detail.code.coding[level3] ^definition = "Shall contain locally defined code if it is a locally defined level 3 intervention"
 * activity.detail.reasonCode ..0
 * activity.detail.scheduled[x] ..1 //gør det muligt at lægge gentagelser på
-* activity.detail.scheduledTiming.repeat.boundsPeriod.start 1..1
+//* activity.detail.scheduledTiming.repeat.boundsPeriod.start 1..1
 * activity.detail.scheduledTiming.repeat.count 1..1
 * activity.detail.scheduledTiming.repeat.duration 1..1
 * activity.detail.scheduledTiming.repeat.durationUnit 1..1
 * activity.detail.scheduledTiming.repeat.durationUnit = http://unitsofmeasure.org#min
 * activity.detail.performer 1..1 //indsatsudfører
-* activity.detail.performer only Reference(klgateway-care-organization)
+* activity.detail.performer only Reference(klgateway-140-organization)
 * activity.detail.performer ^type.aggregation = #bundled
-* activity.detail.extension[interventiontype] ^definition = "Type of intervention. Individual or group"
 
 // udkommenteret relation mellem tilstand og indsats
 //* activity.detail.reasonReference only Reference(klgateway-140-condition)
@@ -111,8 +112,6 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.scheduledTiming.repeat.duration ^short = "[DK] indsatsAktivitetLængdeAfTræningsgange"
 * activity.detail.scheduledTiming.repeat.durationUnit ^short = "[DK] indsatsAktivitetLængdeAfTræningsgangeEnhed"
 * activity.detail.performer ^short = "[DK] indsatsleverandør"
-* activity.detail.extension[interventiontype] ^short = "[DK] indsatstype, individuel eller gruppe"
 
 //make fhir path that makes cancallation type mandatory if status is cancelled or stopped.
-//Gør scheduled timing mandatory hvis indsatsen er bestemte typer træning, og ellers ikke tilladt.
-//gør indsatstypen mandatory, hvis indsatsen er bestemte typer træning, og ellers ikke tilladt. 
+//Gør scheduled timing mandatory hvis indsatsen er bestemte typer træning, og ellers ikke tilladt. 

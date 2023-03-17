@@ -5,13 +5,13 @@ Title:          "ServiceRequest"
 Description:    "Referal used to represent information about the training-referal (GGOP) from a hospital to a Danish municipalities"
 //Requirement pertaining to §140
 * requester 1..1
-* requester only Reference(klgateway-care-organization) //organization used for people from the outside, KLCommonPractitioner for internal requests
+* requester only Reference(klgateway-140-organization) //organization used for people from the outside, KLCommonPractitioner for internal requests
 * requester ^type.aggregation = #bundled
 * code.coding from ServiceTypes140
-* subject only Reference(klgateway-care-citizen)
+* subject only Reference(klgateway-140-citizen)
 * subject ^type.aggregation = #bundled
 * authoredOn 1..1
-* reasonReference only Reference(kl-gateway-focus-condition) //May be there (140)
+* reasonReference only Reference(kl-gateway-140-focus-condition) //May be there (140)
 
 //Setting 0..0 cardinalities
 * identifier 0..0

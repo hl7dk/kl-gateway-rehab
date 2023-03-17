@@ -18,7 +18,7 @@ Description: "Encounter for first planned visits and all executed activities in 
 * serviceType ..0
 * priority ..0
 * subject 1..1
-* subject only Reference(klgateway-care-citizen)
+* subject only Reference(klgateway-140-citizen)
 * subject ^type.aggregation = #bundled
 * episodeOfCare ..0
 * basedOn only Reference(klgateway-140-servicerequest)
