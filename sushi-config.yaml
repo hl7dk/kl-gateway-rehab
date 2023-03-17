@@ -2,8 +2,8 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: kl.dk.fhir.rp
-canonical: http://fhir.kl.dk/rp
+id: kl.dk.fhir.rehab
+canonical: http://fhir.kl.dk/rehab
 name: KLGatewayRehab
 status: draft
 version: 0.1.0
@@ -18,7 +18,8 @@ dependencies:
   hl7.fhir.dk.core:
     uri: https://hl7.dk/fhir/core
     version: 2.1.0
-  kl.dk.fhir.term: dev
+  dk.fhir.ig.kl.common.caresocial: current
+  #kl.dk.fhir.term: dev
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯

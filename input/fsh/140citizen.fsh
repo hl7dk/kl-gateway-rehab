@@ -32,11 +32,11 @@ Description: "Administrative information about a citizen receiving care or care 
 * identifier ^short = "[DK] borgers cpr-nummer"
 * managingOrganization ^short = "[DK] journalførende organisation"
 
-Instance: TestPerson
+Instance: RuddiTestBerggren
 InstanceOf: klgateway-140-citizen
 Description: "Test person used in the examples of the implementation guide."
 * identifier.use = #official
-* identifier.value = "0101010101"
+* identifier.value = "1502779995"
 * identifier.system = "urn:oid:1.2.208.176.1.2"
 * managingOrganization.identifier.use = #official
 * managingOrganization.identifier.value =  "123456789012345"

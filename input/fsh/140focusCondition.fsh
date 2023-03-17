@@ -1,8 +1,8 @@
-Profile:        KLGateway140FocusCondition
-Parent:         http://hl7.dk/fhir/core/StructureDefinition/dk-core-condition
-Id:             kl-gateway-140-focus-condition
-Title:          "KLGateway140FocusCondition"
-Description:    "Conditions which may be used to express the problem of a citizen in Danish municipalities. Mostly used for cross sector use cases."
+Profile: KLGateway140FocusCondition
+Parent: http://hl7.dk/fhir/core/StructureDefinition/dk-core-condition
+Id: klgateway-140-focus-condition
+Title: "KLGateway140FocusCondition"
+Description: "Conditions which may be used to express the problem of a citizen in Danish municipalities. Mostly used for cross sector use cases."
 
 
 * code.coding[FSIIIConditionCode] 0..0

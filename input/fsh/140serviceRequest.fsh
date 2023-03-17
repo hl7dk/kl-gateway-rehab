@@ -1,7 +1,7 @@
 Profile:        KLGateway140ServiceRequest
 Parent:         ServiceRequest
 Id:             klgateway-140-servicerequest
-Title:          "ServiceRequest"
+Title:          "KLGateway140ServiceRequest"
 Description:    "Referal used to represent information about the training-referal (GGOP) from a hospital to a Danish municipalities"
 //Requirement pertaining to §140
 * requester 1..1
@@ -11,14 +11,18 @@ Description:    "Referal used to represent information about the training-refera
 * subject only Reference(klgateway-140-citizen)
 * subject ^type.aggregation = #bundled
 * authoredOn 1..1
-* reasonReference only Reference(kl-gateway-140-focus-condition) //May be there (140)
+* reasonReference only Reference(klgateway-140-focus-condition) //May be there (140)
+* reasonReference ^type.aggregation = #bundled
+* replaces 0..1
+* replaces only Reference(klgateway-140-servicerequest)
+* replaces ^type.aggregation = #bundled
+* intent = http://hl7.org/fhir/request-status#plan
 
 //Setting 0..0 cardinalities
 * identifier 0..0
 * instantiatesCanonical 0..0
 * instantiatesUri 0..0
 * basedOn 0..0
-* replaces 0..0
 * requisition 0..0
 * category 0..0
 * priority 0..0
@@ -50,3 +54,4 @@ Description:    "Referal used to represent information about the training-refera
 * reasonReference ^short = "[DK] anledningsbegrundelse"
 * subject ^short = "[DK] anledningsSubjekt"
 * authoredOn ^short = "[DK] anledningstid"
+* replaces ^short = "[DK] anledningErstatter"
