@@ -45,3 +45,37 @@ Description: "Encounter for first planned visits and all executed activities in 
 * period.end ^short = "[DK] kontaktslut"
 * subject ^short = "[DK] kontaktsubjekt"
 * basedOn ^short = "[DK] kontaktanledning"
+
+
+Instance: RuddiKontaktUndersoegelseAnnuleret
+InstanceOf: klgateway-140-encounter
+Title: "RuddiKontaktUndersøgelseAnnuleret"
+Description: "Ruddis kontakt, som var planlagt til en terapeutfaglig undersøgelse, men som er blevet annuleret"
+Usage: #inline
+* status = http://hl7.org/fhir/encounter-status#cancelled
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
+* period.start = 2022-05-28T15:30:00.000Z
+* subject = Reference(RuddiTestBerggren)
+* basedOn = Reference(RuddiGGOPInformation) 
+
+Instance: RuddiKontaktUndersoegelse
+InstanceOf: klgateway-140-encounter
+Title: "RuddiKontaktUndersøgelse"
+Description: "Ruddis kontakt, hvor der er udført en terapeutfaglig undersøgelse"
+Usage: #inline
+* status = http://hl7.org/fhir/encounter-status#finished
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
+* period.start = 2022-06-02T12:10:00.000Z
+* subject = Reference(RuddiTestBerggren)
+* basedOn = Reference(RuddiGGOPInformation)
+
+Instance: RuddiKontakt1Traening
+InstanceOf: klgateway-140-encounter
+Title: "RuddiKontakt1Traening"
+Description: "Ruddis kontakt, hvor han har første træningsgang"
+Usage: #inline
+* status = http://hl7.org/fhir/encounter-status#finished
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
+* period.start = 2022-05-20T10:00:00.000Z
+* subject = Reference(RuddiTestBerggren)
+* basedOn = Reference(RuddiGGOPInformation)

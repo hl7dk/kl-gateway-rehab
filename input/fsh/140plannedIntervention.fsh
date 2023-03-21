@@ -18,15 +18,14 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity 1..1
 * activity.outcomeReference only Reference(klgateway-140-encounter) //kontakter
 * activity.outcomeReference ^type.aggregation = #bundled
-* activity.reference only Reference(klgateway-140-servicerequest) //GGOP'en
-* activity ^type.aggregation = #bundled
+* activity.reference 0..0
 * activity.detail 1.. 
 * activity.detail.code 1..1 //Indsatskoder niveau 2 og 3
 * activity.detail.code.coding ^slicing.discriminator.type = #value
 * activity.detail.code.coding ^slicing.discriminator.path = "system"
 * activity.detail.code.coding ^slicing.rules = #closed
 * activity.detail.code.coding contains level2 0..1 and level2temp 0..1 and level3 0..1 MS
-* activity.detail.code.coding[level2].system = "urn:oid:1.2.208.176.2.21"
+* activity.detail.code.coding[level2].system = $FSIII
 * activity.detail.code.coding[level2] from KLInterventionCodes140
 * activity.detail.code.coding[level2temp].system = Canonical(Tempcodes)
 * activity.detail.code.coding[level2temp] from KLInterventionCodes140temp
@@ -44,6 +43,11 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.performer 1..1 //indsatsudfører
 * activity.detail.performer only Reference(klgateway-140-organization)
 * activity.detail.performer ^type.aggregation = #bundled
+* extension contains
+   BasedOnServiceRequestExtension named basedOnServiceRequest 1..1
+
+//* extension[basedOnServiceRequest].valueReference only Reference(klgateway-140-servicerequest) //GGOP'en
+* extension[basedOnServiceRequest].valueReference ^type.aggregation = #bundled
 
 // udkommenteret relation mellem tilstand og indsats
 //* activity.detail.reasonReference only Reference(klgateway-140-condition)
@@ -113,35 +117,59 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.scheduledTiming.repeat.durationUnit ^short = "[DK] indsatsAktivitetLængdeAfTræningsgangeEnhed"
 * activity.detail.performer ^short = "[DK] indsatsleverandør"
 
-* obeys klgateway-140-intervention-1
-* obeys klgateway-140-intervention-2
+// * obeys klgateway-140-intervention-1
+// * obeys klgateway-140-intervention-2
 
 
-Invariant: klgateway-140-intervention-1
-Description: "status reason is mandatory if status is cancelled or stopped. Otherwise it is prohibited"
-Severity: #error
-Expression: "activity.detail.all(statusReason.exists() = (%status = 'cancelled' or %status = 'stopped'))"
+// Invariant: klgateway-140-intervention-1
+// Description: "status reason is mandatory if status is cancelled or stopped. Otherwise it is prohibited"
+// Severity: #error
+// Expression: "activity.detail.all(statusReason.exists() = (%status = 'cancelled' or %status = 'stopped'))"
 
-Invariant: klgateway-140-intervention-2
-Description: "scheduled timing is mandatory if the intervention is certain types of training. Otherwise it is prohibited"
-Severity: #error
-Expression: "activity.detail.all(scheduledTiming.exists() = (
-       %code.coding.code = 'f8ac963c-6ec5-4ec5-bd90-a22fea4e2d16'
-    or %code.coding.code = '029cb8af-08d5-4b8f-a911-7dfcb7c27483'
-    or %code.coding.code = 'aeb3d2b2-a551-4c3a-86e2-d165c1aaf350'
-    or %code.coding.code = '8728bce0-90c7-40c8-8c2f-f5c266dad02d'
-    or %code.coding.code = 'fb26c466-14c9-49a1-b69b-a6339f3890e4'
-    or %code.coding.code = 'c6192bb0-266f-43de-976d-e78335c5be0b'
-    or %code.coding.code = '5002d3be-ee05-4ff7-9fd4-a0d815bd6cbd'
-    or %code.coding.code = '6f1107a4-25d3-4d9a-bf35-bd1cf472d183'
-    or %code.coding.code = '7d877253-e385-405c-8822-7fc3d2e7f3b0'
-    or %code.coding.code = 'e5802281-a895-4a3f-868f-c50f1759cc00'
-    or %code.coding.code = '8d9eb012-0f2e-4e3f-8ac9-8f3d87cfdc3b'
-    or %code.coding.code = '4dbd9b85-8b89-45de-bf6f-9509aa122089'
-    or %code.coding.code = '0a995193-b6ab-413b-8692-3456992807d6'))"
+// Invariant: klgateway-140-intervention-2
+// Description: "scheduled timing is mandatory if the intervention is certain types of training. Otherwise it is prohibited"
+// Severity: #error
+// Expression: "activity.detail.all(scheduledTiming.exists() = (
+//        %code.coding.code = 'f8ac963c-6ec5-4ec5-bd90-a22fea4e2d16'
+//     or %code.coding.code = '029cb8af-08d5-4b8f-a911-7dfcb7c27483'
+//     or %code.coding.code = 'aeb3d2b2-a551-4c3a-86e2-d165c1aaf350'
+//     or %code.coding.code = '8728bce0-90c7-40c8-8c2f-f5c266dad02d'
+//     or %code.coding.code = 'fb26c466-14c9-49a1-b69b-a6339f3890e4'
+//     or %code.coding.code = 'c6192bb0-266f-43de-976d-e78335c5be0b'
+//     or %code.coding.code = '5002d3be-ee05-4ff7-9fd4-a0d815bd6cbd'
+//     or %code.coding.code = '6f1107a4-25d3-4d9a-bf35-bd1cf472d183'
+//     or %code.coding.code = '7d877253-e385-405c-8822-7fc3d2e7f3b0'
+//     or %code.coding.code = 'e5802281-a895-4a3f-868f-c50f1759cc00'
+//     or %code.coding.code = '8d9eb012-0f2e-4e3f-8ac9-8f3d87cfdc3b'
+//     or %code.coding.code = '4dbd9b85-8b89-45de-bf6f-9509aa122089'
+//     or %code.coding.code = '0a995193-b6ab-413b-8692-3456992807d6'))"
 
 //make fhir path that makes cancallation type mandatory if status is cancelled or stopped.
 //Gør scheduled timing mandatory hvis indsatsen er bestemte typer træning, og ellers ikke tilladt. 
+
+Extension: BasedOnServiceRequestExtension
+Title:     "basedOnServiceRequestExtension"
+Description: "Extension for pointing to the servicerequest, that started an intervention"
+* value[x] 1..1
+* value[x] only Reference(klgateway-140-servicerequest)
+
+
+Instance: RuddiTerapeutfagligUndersoegelse
+InstanceOf: klgateway-140-planned-intervention
+Title: "RuddiTerapeutfagligUndersøgelse"
+Description: "Ruddi's terapeutfaglige undersøgelse"
+Usage: #example
+* activity.detail.code.coding[level2] = $FSIII#1130ad70-6553-490d-87f8-5e8941687a0c
+* period.start = 2022-05-23
+* period.end = 2022-06-02
+* status = http://hl7.org/fhir/request-status#active
+* intent = http://hl7.org/fhir/care-plan-intent#plan
+* subject = Reference(RuddiTestBerggren)
+* extension[basedOnServiceRequest].valueReference = Reference(RuddiGGOPInformation) 
+* activity.outcomeReference[0] = Reference(RuddiKontaktUndersoegelseAnnuleret)
+* activity.outcomeReference[1] = Reference(RuddiKontaktUndersoegelse)
+* activity.detail.status = http://hl7.org/fhir/care-plan-activity-status#completed
+* activity.detail.performer = Reference(UdfoererAfRuddisRehab)
 
 Instance: RuddiTraening
 InstanceOf: klgateway-140-planned-intervention
@@ -153,11 +181,10 @@ Usage: #example
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan
 * subject = Reference(RuddiTestBerggren)
-* activity.reference = Reference(theServiceRequest) //Denne må ikke angives, når der er en detail. Måske også mere rigtigt at angive vha. based on. Der kan bruges standard extension "event-basedOn" http://hl7.org/fhir/R4/extension-event-basedon.html
-//* activity.outcomeReference = Reference
+* extension[basedOnServiceRequest].valueReference = Reference(RuddiGGOPInformation) 
+* activity.outcomeReference = Reference(RuddiKontakt1Traening)
 * activity.detail.status = http://hl7.org/fhir/care-plan-activity-status#in-progress
-//* activity.detail.statusReason
-//* activity.detail.scheduledTiming.repeat.count
-//* activity.detail.scheduledTiming.repeat.duration
-//* activity.detail.scheduledTiming.repeat.durationUnit
-* activity.detail.performer = Reference(theOrganization)
+* activity.detail.scheduledTiming.repeat.count = 8
+* activity.detail.scheduledTiming.repeat.duration = 60
+* activity.detail.scheduledTiming.repeat.durationUnit = #min
+* activity.detail.performer = Reference(UdfoererAfRuddisRehab)

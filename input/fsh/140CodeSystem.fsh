@@ -8,7 +8,7 @@ Description: "Tempcodes to be implemented in KL-term"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 "Aktivt fravalg" "Borger har behov, men har foretaget et aktivt fravalg"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 #0cd5734d-b663-47c6-a3da-6b14a937d144 "Aktivt fravalg pga. anden sygdom" "Borger har behov, men har foretaget et aktivt fravalg pga. anden sygdom"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 #f8436c2e-af1c-44fe-939d-473b518dd01d "Aktivt fravalg pga. økonomi ifm. transport" "Borger har behov, men har foretaget et aktivt fravalg pga. den omkostning der er forbundet med transport til det sted indsatsen tilbydes"
-* #3a5a72b7-addf-4857-b80c-04e4246e3072 #8371b769-4bfb-4ac8-b130-d91c54784a56 "Aktivt fravalg pga. logisik ifm. transport" "Borger har behov, men har foretaget et aktivt fravalg pga. den logistiske udfordring det er mht. transport, at nå frem til det sted indsatsen tilbydes"
+* #3a5a72b7-addf-4857-b80c-04e4246e3072 #8371b769-4bfb-4ac8-b130-d91c54784a56 "Aktivt fravalg pga. logistik ifm. transport" "Borger har behov, men har foretaget et aktivt fravalg pga. den logistiske udfordring det er mht. transport, at nå frem til det sted indsatsen tilbydes"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 #a3f2bd01-078b-486e-81be-797d192ad7bd "Aktivt fravalg pga. anden træning" "Borger har behov, men har foretaget et aktivt fravalg fordi han/hun er påbegyndt træning i andet regi fx fitnesscenter"
 * #029cb8af-08d5-4b8f-a911-7dfcb7c27483 "ADL-træning på hold"
 * #aeb3d2b2-a551-4c3a-86e2-d165c1aaf350 "ADL-træning individuelt"
@@ -33,12 +33,12 @@ ValueSet: CancellationTypes
 Id: CancellationTypes
 Title: "CancellationTypes"
 Description: "Cancellation valueset, to be implemented in KL-term and FKI"
-* Tempcodes#4bbf6d6a-a1c6-41c2-b8c1-7352b7378adf // "Ikke yderligere behov (borger-vurderet)"
+* Tempcodes#4bbf6d6a-a1c6-41c2-b8c1-7352b7378adf //"Ikke yderligere behov (borger-vurderet)"
 * Tempcodes#a63b6aa6-7d56-4e67-a5b3-d73f6d262af5 //"Ikke yderligere behov (fagperson-vurderet)"
 * Tempcodes#3a5a72b7-addf-4857-b80c-04e4246e3072 //"Aktivt fravalg"
 * Tempcodes#0cd5734d-b663-47c6-a3da-6b14a937d144 //"Aktivt fravalg pga. anden sygdom"
 * Tempcodes#f8436c2e-af1c-44fe-939d-473b518dd01d //"Aktivt fravalg pga. økonomi ifm. transport"
-* Tempcodes#8371b769-4bfb-4ac8-b130-d91c54784a56 //"Aktivt fravalg pga. logisik ifm. transport"
+* Tempcodes#8371b769-4bfb-4ac8-b130-d91c54784a56 //"Aktivt fravalg pga. logistik ifm. transport"
 * Tempcodes#a3f2bd01-078b-486e-81be-797d192ad7bd //"Aktivt fravalg pga. anden træning"
 
 // ValueSet: ExtendedEncounterTypes

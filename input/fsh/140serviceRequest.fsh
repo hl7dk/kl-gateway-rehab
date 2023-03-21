@@ -55,3 +55,16 @@ Description:    "Referal used to represent information about the training-refera
 * subject ^short = "[DK] anledningsSubjekt"
 * authoredOn ^short = "[DK] anledningstid"
 * replaces ^short = "[DK] anledningErstatter"
+
+Instance: RuddiGGOPInformation
+InstanceOf: klgateway-140-servicerequest
+Title: "RuddiGGOPInformation"
+Description: "Information fra Ruddis GGOP, der er baggrunden for at igangsætte indsatsen i kommunen"
+Usage: #inline
+* requester = Reference(AfsenderAfRuddisGGOP)
+* status = http://hl7.org/fhir/request-status#active
+* intent = http://hl7.org/fhir/request-status#plan
+* code.coding = $KLCommonCodes#7fc66c15-0cb3-4c89-9e18-f3a01e6a6592
+* reasonReference = Reference(RuddiAktionsdiagnoseGGOP)
+* subject = Reference(RuddiTestBerggren)
+* authoredOn = 2022-05-23

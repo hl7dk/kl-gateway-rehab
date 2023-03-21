@@ -23,3 +23,21 @@ Description: "Organization as expressed in KLGateway for rehabilitation."
 * contact 0..0
 
 * identifier ^short = "[DK] organisationsid"
+
+Instance: AfsenderAfRuddisGGOP
+InstanceOf: klgateway-140-organization
+Title: "AfsenderAfRuddisGGOP"
+Description: "Ortopædkirurgisk afdeling Holbæk sygehus, der er afsender af Ruddis GGOP"
+Usage: #inline
+* identifier.use = #official
+* identifier.value = "227871000016001"
+* identifier.system = "urn:oid:1.2.208.176.1.1"
+
+Instance: UdfoererAfRuddisRehab
+InstanceOf: klgateway-140-organization
+Usage: #inline
+Title: "UdførerAfRuddisGenoptræning"
+Description: "Genoptræningscenteret Holbæk kommune, der er udfører af Ruddis genoptræning"
+* identifier.use = #official
+* identifier.value = "1037801000016003"
+* identifier.system = "urn:oid:1.2.208.176.1.1"
