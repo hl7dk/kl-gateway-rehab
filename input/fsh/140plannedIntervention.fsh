@@ -166,8 +166,8 @@ Usage: #example
 * intent = http://hl7.org/fhir/care-plan-intent#plan
 * subject = Reference(RuddiTestBerggren)
 * extension[basedOnServiceRequest].valueReference = Reference(RuddiGGOPInformation) 
-* activity.outcomeReference[0] = Reference(RuddiKontaktUndersoegelseAnnuleret)
-* activity.outcomeReference[1] = Reference(RuddiKontaktUndersoegelse)
+* activity.outcomeReference[+] = Reference(RuddiKontaktUndersoegelseAnnuleret)
+* activity.outcomeReference[+] = Reference(RuddiKontaktUndersoegelse)
 * activity.detail.status = http://hl7.org/fhir/care-plan-activity-status#completed
 * activity.detail.performer = Reference(UdfoererAfRuddisRehab)
 

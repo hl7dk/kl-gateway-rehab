@@ -31,6 +31,8 @@ Description: "Delivery report to deliver data for each citizen."
 * entry.request ..0
 * entry.response ..0
 * signature ..0
+* entry[citizen] ^short = "[DK] indberetningsrapportBorger"
+* entry[content] ^short = "[DK] indberetningsrapportIndhold"
 * obeys gateway-140-report-1
 
 

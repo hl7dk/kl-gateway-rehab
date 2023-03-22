@@ -76,6 +76,6 @@ Description: "Ruddis kontakt, hvor han har første træningsgang"
 Usage: #example
 * status = http://hl7.org/fhir/encounter-status#finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
-* period.start = 2022-05-20T10:00:00.000Z
+* period.start = 2022-05-31T10:00:00.000Z
 * subject = Reference(RuddiTestBerggren)
 * basedOn = Reference(RuddiGGOPInformation)
