@@ -1,4 +1,4 @@
-## Scope and usage
+### Scope and usage
 This model is used to represent when a municipality recieves a request for rehabilitation according to §140 in the health act (DK: §140 træning ifølge sundhedsloven).
 
 The ServiceRequest, should have the sending organisation as the requester i.e the hospital that sends the request (GGOP), and intent should always be "plan". The status attribute should be used according to the FHIR-guidance. The requester is mandatory for §140. The citizen is referred in ServiceRequest.subject.
