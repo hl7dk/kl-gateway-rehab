@@ -3,6 +3,8 @@ Id: Tempcodes
 Title: "Tempcodes"
 Description: "Tempcodes to be implemented in KL-term"
 //* #7273c0b7-1a0d-4c4a-a202-c014b1ddd4a0 "Første kontakt i forløb"
+* ^experimental = false
+* ^caseSensitive = true
 * #4bbf6d6a-a1c6-41c2-b8c1-7352b7378adf "Ikke yderligere behov (borger-vurderet)""Borger vurderer, at han/hun ikke har yderligere behov og afslutter derfor før tid"
 * #a63b6aa6-7d56-4e67-a5b3-d73f6d262af5 "Ikke yderligere behov (fagperson-vurderet)" "Fagperson vurderer, at borger ikke har yderligere behov og afslutter derfor før tid"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 "Aktivt fravalg" "Borger har behov, men har foretaget et aktivt fravalg"
@@ -33,6 +35,7 @@ ValueSet: CancellationTypes
 Id: CancellationTypes
 Title: "CancellationTypes"
 Description: "Cancellation valueset, to be implemented in KL-term and FKI"
+* ^experimental = false
 * Tempcodes#4bbf6d6a-a1c6-41c2-b8c1-7352b7378adf //"Ikke yderligere behov (borger-vurderet)"
 * Tempcodes#a63b6aa6-7d56-4e67-a5b3-d73f6d262af5 //"Ikke yderligere behov (fagperson-vurderet)"
 * Tempcodes#3a5a72b7-addf-4857-b80c-04e4246e3072 //"Aktivt fravalg"

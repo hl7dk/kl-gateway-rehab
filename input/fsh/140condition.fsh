@@ -54,7 +54,7 @@ Instance: RuddiTilstand
 InstanceOf: klgateway-140-condition
 Title: "RuddiTilstand"
 Description: "Ruddis Tilstand vedrørende gang og bevægelse"
-Usage: #inline
+Usage: #example
 * code.coding =  $FSIII#3f27a7bc-790d-444e-bcf4-6e22a6b1da7e "Gang og bevægelse"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed

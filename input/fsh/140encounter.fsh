@@ -51,7 +51,7 @@ Instance: RuddiKontaktUndersoegelseAnnuleret
 InstanceOf: klgateway-140-encounter
 Title: "RuddiKontaktUndersøgelseAnnuleret"
 Description: "Ruddis kontakt, som var planlagt til en terapeutfaglig undersøgelse, men som er blevet annuleret"
-Usage: #inline
+Usage: #example
 * status = http://hl7.org/fhir/encounter-status#cancelled
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * period.start = 2022-05-28T15:30:00.000Z
@@ -62,7 +62,7 @@ Instance: RuddiKontaktUndersoegelse
 InstanceOf: klgateway-140-encounter
 Title: "RuddiKontaktUndersøgelse"
 Description: "Ruddis kontakt, hvor der er udført en terapeutfaglig undersøgelse"
-Usage: #inline
+Usage: #example
 * status = http://hl7.org/fhir/encounter-status#finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * period.start = 2022-06-02T12:10:00.000Z
@@ -73,7 +73,7 @@ Instance: RuddiKontakt1Traening
 InstanceOf: klgateway-140-encounter
 Title: "RuddiKontakt1Traening"
 Description: "Ruddis kontakt, hvor han har første træningsgang"
-Usage: #inline
+Usage: #example
 * status = http://hl7.org/fhir/encounter-status#finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * period.start = 2022-05-20T10:00:00.000Z

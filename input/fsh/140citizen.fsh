@@ -35,7 +35,7 @@ Description: "Administrative information about a citizen receiving care or care 
 Instance: RuddiTestBerggren
 InstanceOf: klgateway-140-citizen
 Description: "Test personen Ruddi, fra MedCom test-cprnumre. Holbæk kommune er journalførende organisation."
-Usage: #inline
+Usage: #example
 * identifier.use = #official
 * identifier.value = "1502779995"
 * identifier.system = "urn:oid:1.2.208.176.1.2"

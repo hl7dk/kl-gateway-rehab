@@ -46,7 +46,7 @@ Instance: RuddiAktionsdiagnoseGGOP
 InstanceOf: klgateway-140-focus-condition
 Title: "RuddiAktionsdiagnoseGGOP"
 Description: "Ruddis aktionsdiagnose fra GGOP, hvor man kan se, at han har haft en højresidig pertrokantær femurfraktur"
-Usage: #inline
+Usage: #example
 * code.coding[SKS-D] = urn:oid:1.2.208.176.2.4.12#DS721+TUL1 "Pertrokantær femurfraktur, højresidig"
 * subject = Reference(RuddiTestBerggren)
 

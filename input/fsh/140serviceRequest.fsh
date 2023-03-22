@@ -60,7 +60,7 @@ Instance: RuddiGGOPInformation
 InstanceOf: klgateway-140-servicerequest
 Title: "RuddiGGOPInformation"
 Description: "Information fra Ruddis GGOP, der er baggrunden for at igangsætte indsatsen i kommunen"
-Usage: #inline
+Usage: #example
 * requester = Reference(AfsenderAfRuddisGGOP)
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/request-status#plan
