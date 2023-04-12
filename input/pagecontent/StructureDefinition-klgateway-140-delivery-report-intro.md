@@ -1,4 +1,4 @@
-## Scope and usage
+### Scope and usage
 This model is used to represent the reporting of rehabilitation deliverd by the municipalities according to §140 in the health act.
 
 The report is a FHIR Bundle that allows different ressources to be grouped and handled as a unit. The ressources that are grouped in this bundle is one, and only one klgateway-140-citizen, together with the content that have changed since the last reporting. The content can be of all the types that are present as profiles in this implementation guide.

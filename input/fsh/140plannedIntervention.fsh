@@ -50,10 +50,10 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * extension[basedOnServiceRequest].valueReference ^type.aggregation = #bundled
 
 // udkommenteret relation mellem tilstand og indsats
-//* activity.detail.reasonReference only Reference(klgateway-140-condition)
-//* activity.detail.reasonReference MS
-//* activity.detail.reasonReference ^definition = "Reason for this intervention. Must contain all conditions known to be addressed by this intervention"
-//* activity.detail.reasonReference ^type.aggregation = #bundled
+* activity.detail.reasonReference only Reference(klgateway-140-condition)
+* activity.detail.reasonReference MS
+* activity.detail.reasonReference ^definition = "Reason for this intervention. Must contain all conditions known to be addressed by this intervention"
+* activity.detail.reasonReference ^type.aggregation = #bundled
 
 //0..0 kardinaliteter
 * identifier ..0
@@ -107,7 +107,7 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * intent ^short = "[DK] indsatshensigt"
 * subject ^short = "[DK] indsatssubjekt"
 * activity.reference ^short = "[DK] indsatsAnledning"
-//* activity.detail.reasonReference ^short = "[DK] indsatsbegrundelse"
+* activity.detail.reasonReference ^short = "[DK] indsatsbegrundelse"
 * activity.outcomeReference ^short = "[DK] indsatsgennemførtAktivitet"
 * activity.detail.status ^short = "[DK] indsatsAktivitetsstatus"
 * activity.detail.statusReason ^short = "[DK] indsatsAktivitetForklaringAfStatus"

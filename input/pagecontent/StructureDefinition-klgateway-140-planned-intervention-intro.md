@@ -29,6 +29,8 @@ The CarePlan.activity.reference points to the ServiceRequest (GGOP) which was th
 
 CarePlan.subject references the citizen. CarePlan.activity.detail.performer is the organisation that carries out the intervention (leverandør).
 
+CarePlan.activity.detail.reasonReference holds the link between conditions and interventions. It is optional to report.
+
 ### Conversions between Danish information model and FHIR-profile
 
 Nedenstående tabel oversætter mellem de attributter der er defineret i den fælleskommunale informationsmodel (FKI), definerer kort den enkelte attribut på dansk og specificere hvilke af FHIR-profilens atributter der skal bruges til specifikation af indholdet
@@ -50,3 +52,4 @@ Nedenstående tabel oversætter mellem de attributter der er defineret i den fæ
 |indsatsAnledning|Den henvendelse/henvisning, der er anledning til, at denne indsats igangsættes|CarePlan.activity.reference|
 |indsatsleverandør|Organisation, der har ansvaret for at udføre den planlagte indsats|CarePlan.activity.detail.performer|
 |indsatssubjekt|Den borger som den planlagte indsats retter sig mod|CarePlan.subject|
+|indsatsbegrundelse|Tilstand som indsatsen rettes mod|CarePlan.activity.detail.reasonReference|
