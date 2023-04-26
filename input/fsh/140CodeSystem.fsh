@@ -12,6 +12,7 @@ Description: "Tempcodes to be implemented in KL-term"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 #f8436c2e-af1c-44fe-939d-473b518dd01d "Aktivt fravalg pga. økonomi ifm. transport" "Borger har behov, men har foretaget et aktivt fravalg pga. den omkostning der er forbundet med transport til det sted indsatsen tilbydes"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 #8371b769-4bfb-4ac8-b130-d91c54784a56 "Aktivt fravalg pga. logistik ifm. transport" "Borger har behov, men har foretaget et aktivt fravalg pga. den logistiske udfordring det er mht. transport, at nå frem til det sted indsatsen tilbydes"
 * #3a5a72b7-addf-4857-b80c-04e4246e3072 #a3f2bd01-078b-486e-81be-797d192ad7bd "Aktivt fravalg pga. anden træning" "Borger har behov, men har foretaget et aktivt fravalg fordi han/hun er påbegyndt træning i andet regi fx fitnesscenter"
+* #82e99421-31da-4915-96ed-168ccfa1d20c "Hændelse medfører ophør" "En hændelse i borger liv medfører at indsatsen nødvendigvis må ophøre. En hændelse kan fx være flytning til en anden kommune, en hospitalsindlæggelse eller en helbredsmæssig forværring der efter faglig vurdering gør gentræningen umulig"
 * #029cb8af-08d5-4b8f-a911-7dfcb7c27483 "ADL-træning på hold"
 * #aeb3d2b2-a551-4c3a-86e2-d165c1aaf350 "ADL-træning individuelt"
 * #8728bce0-90c7-40c8-8c2f-f5c266dad02d "Fysisk træning på hold"
@@ -43,6 +44,7 @@ Description: "Cancellation valueset, to be implemented in KL-term and FKI"
 * Tempcodes#f8436c2e-af1c-44fe-939d-473b518dd01d //"Aktivt fravalg pga. økonomi ifm. transport"
 * Tempcodes#8371b769-4bfb-4ac8-b130-d91c54784a56 //"Aktivt fravalg pga. logistik ifm. transport"
 * Tempcodes#a3f2bd01-078b-486e-81be-797d192ad7bd //"Aktivt fravalg pga. anden træning"
+* Tempcodes#82e99421-31da-4915-96ed-168ccfa1d20c //"Hændelse medfører ophør"
 
 // ValueSet: ExtendedEncounterTypes
 // Id: ExtendedEncounterTypes
