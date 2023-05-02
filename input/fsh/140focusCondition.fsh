@@ -8,6 +8,7 @@ Description: "Conditions which may be used to express the problem of a citizen i
 * code.coding[FSIIIConditionCode] 0..0
 * code.coding[SCTConditionCode] 0..0
 * code.coding[FFBConditionCode] 0..0
+* code.coding[ICPC2code] 0..0
 
 
 //Specifying datatype of subject
@@ -15,7 +16,7 @@ Description: "Conditions which may be used to express the problem of a citizen i
 
 //Setting other attributes to 0..0
 * identifier 0..0
-* clinicalStatus 0..0
+* clinicalStatus 1..1
 * verificationStatus 0..0
 * category 0..0
 * severity 0..0
@@ -38,6 +39,7 @@ Description: "Conditions which may be used to express the problem of a citizen i
 
 //Adding shorts, to make danish descriptions available
 
+* clinicalStatus ^short = "[DK] fokusTilstandStatus"
 * code.coding ^short = "[DK] fokusTilstandskode"
 * subject ^short = "[DK] fokusTilstandsubjekt"
 
@@ -48,5 +50,6 @@ Title: "RuddiAktionsdiagnoseGGOP"
 Description: "Ruddis aktionsdiagnose fra GGOP, hvor man kan se, at han har haft en højresidig pertrokantær femurfraktur"
 Usage: #example
 * code.coding[SKS-D] = urn:oid:1.2.208.176.2.4.12#DS721+TUL1 "Pertrokantær femurfraktur, højresidig"
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#unknown
 * subject = Reference(RuddiTestBerggren)
 

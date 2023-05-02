@@ -27,6 +27,7 @@ Description: "Tempcodes to be implemented in KL-term"
 * #0a995193-b6ab-413b-8692-3456992807d6 "Vejledning og undervisning individuelt"
 * #722cb0e4-0e21-4442-af04-fe5e4ce4c540 "Opfølgning på hold"
 * #31de6eb9-eae2-4759-81c4-8e2323c73101 "Opfølgning individuelt"
+* #4863001e-14c7-4be8-a2da-e4f21a4b6ac4 "Opfølgningsforløb efter §140 genoptræning"
 
 //* #2865f123-15a7-4a36-a514-32ea37c400ca "gruppebaseret indsats"
 //* #8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "individuel indsats"
@@ -45,6 +46,16 @@ Description: "Cancellation valueset, to be implemented in KL-term and FKI"
 * Tempcodes#8371b769-4bfb-4ac8-b130-d91c54784a56 //"Aktivt fravalg pga. logistik ifm. transport"
 * Tempcodes#a3f2bd01-078b-486e-81be-797d192ad7bd //"Aktivt fravalg pga. anden træning"
 * Tempcodes#82e99421-31da-4915-96ed-168ccfa1d20c //"Hændelse medfører ophør"
+
+
+ValueSet: CarePlanCategories140
+Id: CarePlanCategories140
+Title: "CarePlanCategories"
+Description: "The care plan categories usefull for §140"
+* ^experimental = false
+* Tempcodes#4863001e-14c7-4be8-a2da-e4f21a4b6ac4 //"Opfølgningsforløb efter §140 genoptræning"
+* $KLCommonCodes#ddd2f670-5ec7-4f9c-9a2c-aee25cb133bf //genoptræning efter 140
+
 
 // ValueSet: ExtendedEncounterTypes
 // Id: ExtendedEncounterTypes
