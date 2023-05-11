@@ -8,8 +8,9 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * status ^definition = "Shall be either unknown, entered-in-error, or the status of the intervention at the time of reporting"
 * intent = #plan
 * activity.detail.status ^definition = "Shall be either unknown, or cancelled, or the activity status of the intervention at the time of reporting"
-* activity.detail.statusReason from CancellationTypes //hvilken type, når interventionen stopper, for at lave en ny, fordi der er sendt en ny GGOP
-
+* basedOn ..1
+* basedOn only Reference(klgateway-140-care-plan)
+* basedOn ^type.aggregation = #bundled
 * subject only Reference(klgateway-140-citizen) //borger
 * subject ^type.aggregation = #bundled
 * period 1..1
@@ -34,22 +35,16 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.code.coding[level3].display 1..1
 * activity.detail.code.coding[level3] ^definition = "Shall contain locally defined code if it is a locally defined level 3 intervention"
 * activity.detail.reasonCode ..0
-* activity.detail.scheduled[x] ..1 //gør det muligt at lægge gentagelser på
-//* activity.detail.scheduledTiming.repeat.boundsPeriod.start 1..1
-* activity.detail.scheduledTiming.repeat.count 1..1
-* activity.detail.scheduledTiming.repeat.duration 1..1
-* activity.detail.scheduledTiming.repeat.durationUnit 1..1
-* activity.detail.scheduledTiming.repeat.durationUnit = http://unitsofmeasure.org#min
-* activity.detail.performer 1..1 //indsatsudfører
+* activity.detail.scheduled[x] 0..0
+* activity.detail.performer 0..1 //indsatsudfører
 * activity.detail.performer only Reference(klgateway-140-organization)
 * activity.detail.performer ^type.aggregation = #bundled
 * extension contains
    BasedOnServiceRequestExtension named basedOnServiceRequest 1..1
 
-//* extension[basedOnServiceRequest].valueReference only Reference(klgateway-140-servicerequest) //GGOP'en
 * extension[basedOnServiceRequest].valueReference ^type.aggregation = #bundled
 
-// udkommenteret relation mellem tilstand og indsats
+// relation mellem tilstand og indsats
 * activity.detail.reasonReference only Reference(klgateway-140-condition)
 * activity.detail.reasonReference MS
 * activity.detail.reasonReference ^definition = "Reason for this intervention. Must contain all conditions known to be addressed by this intervention"
@@ -59,7 +54,6 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * identifier ..0
 * instantiatesCanonical ..0
 * instantiatesUri ..0
-* basedOn ..0
 * replaces ..0
 * partOf ..0
 * category ..0
@@ -81,22 +75,24 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.reasonReference 0..0
 * activity.detail.goal ..0
 * activity.detail.doNotPerform ..0
-* activity.detail.scheduledString ..0
-* activity.detail.scheduledPeriod ..0
-* activity.detail.scheduledTiming.code 0..0
-* activity.detail.scheduledTiming.event 0..0
-* activity.detail.scheduledTiming.repeat.boundsPeriod.end 0..0
-* activity.detail.scheduledTiming.repeat.frequency 0..0
-* activity.detail.scheduledTiming.repeat.durationMax 0..0
-* activity.detail.scheduledTiming.repeat.boundsDuration 0..0
-* activity.detail.scheduledTiming.repeat.boundsRange 0..0
-* activity.detail.scheduledTiming.repeat.countMax 0..0
-* activity.detail.scheduledTiming.repeat.dayOfWeek 0..0
+// * activity.detail.scheduledString ..0
+// * activity.detail.scheduledPeriod ..0
+// * activity.detail.scheduledTiming.code 0..0
+// * activity.detail.scheduledTiming.event 0..0
+// * activity.detail.scheduledTiming.repeat.boundsPeriod.end 0..0
+// * activity.detail.scheduledTiming.repeat.frequency 0..0
+// * activity.detail.scheduledTiming.repeat.durationMax 0..0
+// * activity.detail.scheduledTiming.repeat.boundsDuration 0..0
+// * activity.detail.scheduledTiming.repeat.boundsRange 0..0
+// * activity.detail.scheduledTiming.repeat.countMax 0..0
+// * activity.detail.scheduledTiming.repeat.dayOfWeek 0..0
+* activity.detail.statusReason 0..0
 * activity.detail.location ..0
 * activity.detail.product[x] ..0
 * activity.detail.dailyAmount ..0
 * activity.detail.quantity ..0
 * activity.detail.description ..0
+* activity.outcomeReference 0..0
 * note ..0
 
 //Danish descriptions
@@ -106,28 +102,23 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * status ^short = "[DK] indsatsstatus"
 * intent ^short = "[DK] indsatshensigt"
 * subject ^short = "[DK] indsatssubjekt"
-* activity.reference ^short = "[DK] indsatsAnledning"
+* extension[basedOnServiceRequest] ^short = "[DK] indsatsAnledning"
 * activity.detail.reasonReference ^short = "[DK] indsatsbegrundelse"
-* activity.outcomeReference ^short = "[DK] indsatsgennemførtAktivitet"
 * activity.detail.status ^short = "[DK] indsatsAktivitetsstatus"
-* activity.detail.statusReason ^short = "[DK] indsatsAktivitetForklaringAfStatus"
+//* activity.detail.statusReason ^short = "[DK] indsatsAktivitetForklaringAfStatus"
 //* activity.detail.scheduledTiming.repeat.boundsPeriod.start ^short = "[DK] indsatsAktivitetPlanlagtOpstartsdato"
-* activity.detail.scheduledTiming.repeat.count ^short = "[DK] indsatsAktivitetAntalTræningsgange"
-* activity.detail.scheduledTiming.repeat.duration ^short = "[DK] indsatsAktivitetLængdeAfTræningsgange"
-* activity.detail.scheduledTiming.repeat.durationUnit ^short = "[DK] indsatsAktivitetLængdeAfTræningsgangeEnhed"
+//* activity.detail.scheduledTiming.repeat.count ^short = "[DK] indsatsAktivitetAntalTræningsgange"
+//* activity.detail.scheduledTiming.repeat.duration ^short = "[DK] indsatsAktivitetLængdeAfTræningsgange"
+//* activity.detail.scheduledTiming.repeat.durationUnit ^short = "[DK] indsatsAktivitetLængdeAfTræningsgangeEnhed"
 * activity.detail.performer ^short = "[DK] indsatsleverandør"
-* obeys klgateway-140-intervention-2
 * obeys klgateway-140-intervention-1
+* obeys klgateway-140-intervention-2
+
 
 Invariant: klgateway-140-intervention-1
-Description: "status reason is mandatory if status is cancelled or stopped. Otherwise it is prohibited"
+Description: "has a reference to careplan if the intervention is a certain type of training"
 Severity: #error
-Expression: "activity.detail.all(statusReason.exists() = (status = 'cancelled' or status = 'stopped'))"
-
-Invariant: klgateway-140-intervention-2
-Description: "scheduled timing is mandatory if the intervention is certain types of training. Otherwise it is prohibited"
-Severity: #error
-Expression: "activity.detail.all(scheduledTiming.exists() = (
+Expression: "(
        code.coding.code = 'f8ac963c-6ec5-4ec5-bd90-a22fea4e2d16'
     or code.coding.code = '029cb8af-08d5-4b8f-a911-7dfcb7c27483'
     or code.coding.code = 'aeb3d2b2-a551-4c3a-86e2-d165c1aaf350'
@@ -140,7 +131,16 @@ Expression: "activity.detail.all(scheduledTiming.exists() = (
     or code.coding.code = 'e5802281-a895-4a3f-868f-c50f1759cc00'
     or code.coding.code = '8d9eb012-0f2e-4e3f-8ac9-8f3d87cfdc3b'
     or code.coding.code = '4dbd9b85-8b89-45de-bf6f-9509aa122089'
-    or code.coding.code = '0a995193-b6ab-413b-8692-3456992807d6'))"
+    or code.coding.code = '0a995193-b6ab-413b-8692-3456992807d6') implies (basedOn.select(resource as CarePlan).category.code = 'ddd2f670-5ec7-4f9c-9a2c-aee25cb133bf' and activity.detail.performer.empty())"
+
+ 
+
+Invariant: klgateway-140-intervention-2
+Description: "does not have a reference to careplan if the intervention is a certain type of intervention"
+Severity: #error
+Expression: "(
+       code.coding.code = '1130ad70-6553-490d-87f8-5e8941687a0c'
+    or code.coding.code = 'ba3e17bd-d4aa-4848-acad-25adc8285c19') implies basedOn.empty())"
 
 //make fhir path that makes cancallation type mandatory if status is cancelled or stopped.
 //Gør scheduled timing mandatory hvis indsatsen er bestemte typer træning, og ellers ikke tilladt. 
@@ -164,8 +164,6 @@ Usage: #example
 * intent = http://hl7.org/fhir/care-plan-intent#plan
 * subject = Reference(RuddiTestBerggren)
 * extension[basedOnServiceRequest].valueReference = Reference(RuddiGGOPInformation) 
-* activity.outcomeReference[+] = Reference(RuddiKontaktUndersoegelseAnnuleret)
-* activity.outcomeReference[+] = Reference(RuddiKontaktUndersoegelse)
 * activity.detail.status = http://hl7.org/fhir/care-plan-activity-status#completed
 * activity.detail.performer = Reference(UdfoererAfRuddisRehab)
 
@@ -179,10 +177,6 @@ Usage: #example
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan
 * subject = Reference(RuddiTestBerggren)
-* extension[basedOnServiceRequest].valueReference = Reference(RuddiGGOPInformation) 
-* activity.outcomeReference = Reference(RuddiKontakt1Traening)
+* extension[basedOnServiceRequest].valueReference = Reference(RuddiGGOPInformation)
 * activity.detail.status = http://hl7.org/fhir/care-plan-activity-status#in-progress
-* activity.detail.scheduledTiming.repeat.count = 8
-* activity.detail.scheduledTiming.repeat.duration = 60
-* activity.detail.scheduledTiming.repeat.durationUnit = http://unitsofmeasure.org#min
-* activity.detail.performer = Reference(UdfoererAfRuddisRehab)
+* basedOn = Reference(RuddiTraeningsforloeb)

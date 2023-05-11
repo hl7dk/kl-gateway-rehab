@@ -21,8 +21,12 @@ Description: "Encounter for first planned visits and all executed activities in 
 * subject only Reference(klgateway-140-citizen)
 * subject ^type.aggregation = #bundled
 * episodeOfCare ..0
+* basedOn 1..1
 * basedOn only Reference(klgateway-140-servicerequest)
 * basedOn ^type.aggregation = #bundled
+* extension contains
+   BasedOnCarePlanExtension named basedOnCarePlan 0..1
+* extension[basedOnCarePlan].valueReference ^type.aggregation = #bundled
 * participant ..0
 * appointment ..0
 * period 1..1
@@ -45,6 +49,12 @@ Description: "Encounter for first planned visits and all executed activities in 
 * period.end ^short = "[DK] kontaktslut"
 * subject ^short = "[DK] kontaktsubjekt"
 * basedOn ^short = "[DK] kontaktanledning"
+
+Extension: BasedOnCarePlanExtension
+Title:     "basedOnCarePlanExtension"
+Description: "Extension for pointing to the careplan describing why this encounter is taking place, will be part of R5 without needing the extension"
+* value[x] 1..1
+* value[x] only Reference(klgateway-140-care-plan)
 
 
 Instance: RuddiKontaktUndersoegelseAnnuleret
@@ -79,3 +89,4 @@ Usage: #example
 * period.start = 2022-05-31T10:00:00.000Z
 * subject = Reference(RuddiTestBerggren)
 * basedOn = Reference(RuddiGGOPInformation)
+* extension[basedOnCarePlan].valueReference = Reference(RuddiTraeningsforloeb)
