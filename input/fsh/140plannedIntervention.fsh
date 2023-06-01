@@ -30,6 +30,7 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.code.coding[level2] from KLInterventionCodes140
 * activity.detail.code.coding[level2temp].system = Canonical(Tempcodes)
 * activity.detail.code.coding[level2temp] from KLInterventionCodes140temp
+//kl-term update delete two lines above
 * activity.detail.code.coding[level3].system = "http://gateway.kl.dk/1.0/CodeSystem/LocallyDefinedInterventions"
 * activity.detail.code.coding[level3].code 1..1
 * activity.detail.code.coding[level3].display 1..1
@@ -105,12 +106,8 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * extension[basedOnServiceRequest] ^short = "[DK] indsatsAnledning"
 * activity.detail.reasonReference ^short = "[DK] indsatsbegrundelse"
 * activity.detail.status ^short = "[DK] indsatsAktivitetsstatus"
-//* activity.detail.statusReason ^short = "[DK] indsatsAktivitetForklaringAfStatus"
-//* activity.detail.scheduledTiming.repeat.boundsPeriod.start ^short = "[DK] indsatsAktivitetPlanlagtOpstartsdato"
-//* activity.detail.scheduledTiming.repeat.count ^short = "[DK] indsatsAktivitetAntalTræningsgange"
-//* activity.detail.scheduledTiming.repeat.duration ^short = "[DK] indsatsAktivitetLængdeAfTræningsgange"
-//* activity.detail.scheduledTiming.repeat.durationUnit ^short = "[DK] indsatsAktivitetLængdeAfTræningsgangeEnhed"
 * activity.detail.performer ^short = "[DK] indsatsleverandør"
+* basedOn ^short = "[DK] IndsatsDelAfPlan"
 * obeys klgateway-140-intervention-1
 * obeys klgateway-140-intervention-2
 
@@ -131,7 +128,7 @@ Expression: "(
     or code.coding.code = 'e5802281-a895-4a3f-868f-c50f1759cc00'
     or code.coding.code = '8d9eb012-0f2e-4e3f-8ac9-8f3d87cfdc3b'
     or code.coding.code = '4dbd9b85-8b89-45de-bf6f-9509aa122089'
-    or code.coding.code = '0a995193-b6ab-413b-8692-3456992807d6') implies (basedOn.select(resource as CarePlan).category.code = 'ddd2f670-5ec7-4f9c-9a2c-aee25cb133bf' and activity.detail.performer.empty())"
+    or code.coding.code = '0a995193-b6ab-413b-8692-3456992807d6') implies basedOn.exists()"
 
  
 
@@ -142,15 +139,13 @@ Expression: "(
        code.coding.code = '1130ad70-6553-490d-87f8-5e8941687a0c'
     or code.coding.code = 'ba3e17bd-d4aa-4848-acad-25adc8285c19') implies basedOn.empty())"
 
-//make fhir path that makes cancallation type mandatory if status is cancelled or stopped.
-//Gør scheduled timing mandatory hvis indsatsen er bestemte typer træning, og ellers ikke tilladt. 
-
 Extension: BasedOnServiceRequestExtension
 Title:     "basedOnServiceRequestExtension"
 Description: "Extension for pointing to the servicerequest, that started an intervention"
 * value[x] 1..1
 * value[x] only Reference(klgateway-140-servicerequest)
-
+* ^context.type = http://hl7.org/fhir/extension-context-type#element
+* ^context.expression = "CarePlan"
 
 Instance: RuddiTerapeutfagligUndersoegelse
 InstanceOf: klgateway-140-planned-intervention

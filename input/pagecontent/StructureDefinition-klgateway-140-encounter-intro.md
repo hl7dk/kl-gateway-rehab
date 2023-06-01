@@ -3,7 +3,7 @@ klgateway-140-encounter is used whenever a citizen meets the rehabilitation staf
 
 In the context of the rehabilitation repporting, all Encounter.status values may be used, but not all are mandatory. The mandatory part is:
 * To report all carried out encounters. For encounters carried out, use Encounter.status 'finished'.
-* To report, if the first encounter in a care pathway has been cancelled. This helps show that the municipalities adhere to the treatment guarantee (behandlingsgaranti), even though an actual encounter has not been carried out yet. Use Encounter.status 'cancelled'.
+* To report, if the first encounter in a '§140' has been cancelled. This helps show that the municipalities adhere to the treatment guarantee (behandlingsgaranti), even though an actual encounter has not been carried out yet. Use Encounter.status 'cancelled'.
 * To report errors using status 'entered-in-error'
 
 Encounter.class is mandatory in FHIR. In Danish municipalities, the values are used as follows.
@@ -12,6 +12,8 @@ Encounter.class is mandatory in FHIR. In Danish municipalities, the values are u
 * For telehealth/telecare encounters, where the patient is contacted by telephone, by teleconference or e-mail, the code is 'VR' virtual.
 
 All encounters should be related to the ServiceRequest (request for rehabilitation according to §140 in the health act), so that it may be tracked which request resulted in what activities. Use Encounter.basedOn. An encounter may only be related to one ServiceRequest. If a second (updated) request is recieved to replace an existing one, while a citizen already recieves rehabilitation, Encounter.basedOn should point to the new service request.
+
+If the encounter delivers a treatment oriented intervention e.g. training, supervision and/or education - Encounter.extension[basedOnCarePlan] should be populated with a reference to the care plan that describes its content and scheduledTiming. 
 
 The time of the encounter is documented in Encounter.period.start, and is mandatory. The endtime is not mandatory.
 
@@ -30,3 +32,4 @@ Nedenstående tabel oversætter mellem de attributter der er defineret i den fæ
 |borgerkontaktslut|Kontaktens sluttidspunkt, eller planlagte sluttidspunkt|Encounter.period.end|
 |borgerkontaktsubjekt|Den borger kontakten vedrører|Encounter.subject|
 |borgerkontaktanledning|Den henvisning/henvendelse, der er grunden til at denne kontakt udføres|Encounter.basedOn|
+|borgerkontaktBaseretPå|Den care plan, der er grunden til at denne kontakt udføres|Encounter.extension:basedOnCarePlan|

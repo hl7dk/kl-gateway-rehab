@@ -96,9 +96,9 @@ Description: "Care plans for §140 rehabilitation in Danish Municipalities."
 * activity.detail.status ^short = "[DK] indsatsforløbsAktivitetsstatus"
 * activity.detail.statusReason ^short = "[DK] indsatsforløbForklaringAfStatus"
 //* activity.detail.scheduledTiming.repeat.boundsPeriod.start ^short = "[DK] indsatsAktivitetPlanlagtOpstartsdato"
-* activity.detail.scheduledTiming.repeat.count ^short = "[DK] indsatsAktivitetAntalTræningsgange"
-* activity.detail.scheduledTiming.repeat.duration ^short = "[DK] indsatsAktivitetLængdeAfTræningsgange"
-* activity.detail.scheduledTiming.repeat.durationUnit ^short = "[DK] indsatsAktivitetLængdeAfTræningsgangeEnhed"
+* activity.detail.scheduledTiming.repeat.count ^short = "[DK] indsatsAktivitetAntalGange"
+* activity.detail.scheduledTiming.repeat.duration ^short = "[DK] indsatsAktivitetLængdeAfGange"
+* activity.detail.scheduledTiming.repeat.durationUnit ^short = "[DK] indsatsAktivitetLængdeAfGangeEnhed"
 * activity.detail.performer ^short = "[DK] indsatsleverandør"
 * obeys klgateway-140-care-plan-1
 * obeys klgateway-140-care-plan-2
@@ -130,7 +130,7 @@ Expression: "activity.detail.all(statusReason.exists() = (status = 'cancelled' o
      Invariant: klgateway-140-care-plan-2
  Description: "scheduled timing is mandatory if the intervention is certain types of training. Otherwise it is prohibited"
  Severity: #error
- Expression: "category.code = 'ddd2f670-5ec7-4f9c-9a2c-aee25cb133bf' implies activity.detail.scheduledTiming.exists()"
+ Expression: "category.code = 'f15b2663-94d9-4d0c-a5de-d8bd8e1e4ebb' implies activity.detail.scheduledTiming.exists()"
 
 //make fhir path that makes cancallation type mandatory if status is cancelled or stopped.
 //Gør scheduled timing mandatory hvis indsatsen er bestemte typer træning, og ellers ikke tilladt. 
@@ -147,7 +147,7 @@ InstanceOf: klgateway-140-care-plan
 Title: "RuddiTræningsforløb"
 Description: "Ruddi's træningsforløb"
 Usage: #example
-* category = $KLCommonCodes#ddd2f670-5ec7-4f9c-9a2c-aee25cb133bf
+* category = Tempcodes#f15b2663-94d9-4d0c-a5de-d8bd8e1e4ebb
 * period.start = 2022-05-30
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan

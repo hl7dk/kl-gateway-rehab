@@ -27,7 +27,8 @@ Description: "Tempcodes to be implemented in KL-term"
 * #0a995193-b6ab-413b-8692-3456992807d6 "Vejledning og undervisning individuelt"
 * #722cb0e4-0e21-4442-af04-fe5e4ce4c540 "Opfølgning på hold"
 * #31de6eb9-eae2-4759-81c4-8e2323c73101 "Opfølgning individuelt"
-* #4863001e-14c7-4be8-a2da-e4f21a4b6ac4 "Opfølgningsforløb efter §140 genoptræning"
+* #4863001e-14c7-4be8-a2da-e4f21a4b6ac4 "Opfølgningsforløb efter §140"
+* #f15b2663-94d9-4d0c-a5de-d8bd8e1e4ebb "Interventionsforløb efter §140"
 
 //* #2865f123-15a7-4a36-a514-32ea37c400ca "gruppebaseret indsats"
 //* #8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "individuel indsats"
@@ -53,8 +54,8 @@ Id: CarePlanCategories140
 Title: "CarePlanCategories"
 Description: "The care plan categories usefull for §140"
 * ^experimental = false
-* Tempcodes#4863001e-14c7-4be8-a2da-e4f21a4b6ac4 //"Opfølgningsforløb efter §140 genoptræning"
-* $KLCommonCodes#ddd2f670-5ec7-4f9c-9a2c-aee25cb133bf //genoptræning efter 140
+* Tempcodes#4863001e-14c7-4be8-a2da-e4f21a4b6ac4 //"Opfølgningsforløb efter §140"
+* Tempcodes#f15b2663-94d9-4d0c-a5de-d8bd8e1e4ebb //"Interventionsforløb efter §140"
 
 
 // ValueSet: ExtendedEncounterTypes

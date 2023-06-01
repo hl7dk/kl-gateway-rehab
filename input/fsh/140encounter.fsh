@@ -49,6 +49,7 @@ Description: "Encounter for first planned visits and all executed activities in 
 * period.end ^short = "[DK] kontaktslut"
 * subject ^short = "[DK] kontaktsubjekt"
 * basedOn ^short = "[DK] kontaktanledning"
+* extension[basedOnCarePlan] ^short = "[DK] kontaktBaseretPå"
 
 Extension: BasedOnCarePlanExtension
 Title:     "basedOnCarePlanExtension"

@@ -17,7 +17,7 @@ Description: "Conditions which may be used to express the problem of a citizen i
 //Setting other attributes to 0..0
 * identifier 0..0
 * clinicalStatus 1..1
-* verificationStatus 0..0
+* verificationStatus 0..1
 * category 0..0
 * severity 0..0
 * code.text 0..0

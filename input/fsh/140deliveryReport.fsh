@@ -7,109 +7,49 @@ Description: "Delivery report to deliver data for each citizen."
 * type = #collection
 * timestamp 1..1
 * total ..0
-* link 0..1
-* entry.link 1..1
+* link 0..0
+* entry.link 0..0
 * entry.resource 1..1
-* entry ^slicing.discriminator.type = #value
-* entry ^slicing.discriminator.path = "link.url"
-* entry ^slicing.rules = #closed
-* entry contains citizen 1..1 and content 1..*
-* entry[citizen].link.url = "http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-citizen"
-* entry[citizen].link.relation = "citizen"
-* entry[citizen].resource only
-    klgateway-140-citizen
-* entry[content].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[content].link.relation = "content"
-* entry[content].resource only
+* entry.resource only
     Condition or
+    CarePlan or
     klgateway-140-encounter or
     klgateway-140-organization or
-    klgateway-140-planned-intervention or
+    klgateway-140-citizen or
     klgateway-140-servicerequest
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry contains citizen 1..1
+* entry[citizen].resource only
+    klgateway-140-citizen
 * entry.resource ^short = "Citizen and content constrained to known profiles"
 * entry.search ..0
 * entry.request ..0
 * entry.response ..0
 * signature ..0
 * entry[citizen] ^short = "[DK] indberetningsrapportBorger"
-* entry[content] ^short = "[DK] indberetningsrapportIndhold"
+* entry ^short = "[DK] indberetningsrapportIndhold"
 * obeys gateway-140-report-1
+* obeys gateway-140-report-2
 
 
 Invariant: gateway-140-report-1
-Description: "All condition resources shall conform to either klgateway-140-condition profile, or klgateway-140--focus-condition profile"
+Description: "All condition resources shall conform to either klgateway-140-condition profile, or klgateway-119--focus-condition profile"
 Severity: #error
 Expression: "entry.ofType(Condition).all(
     resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-condition')
  or resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-focus-condition'))"
 
+Invariant: gateway-140-report-2
+Description: "All condition resources shall conform to either klgateway-140-condition profile, or klgateway-119--focus-condition profile"
+Severity: #error
+Expression: "entry.ofType(CarePlan).all(
+    resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-care-plan')
+ or resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-planned-intervention'))"
+
 Instance: RuddiIndberetningsrapport
-InstanceOf: KLGateway140DeliveryReport
-Description: "Indberetning for Ruddi"
-Usage: #example
-* type = #collection
-* timestamp = 2020-08-14T00:00:00Z
-* entry[+].link.url = "http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-citizen"
-* entry[=].link.relation = "citizen"
-* entry[=].fullUrl = "Patient/RuddiTestBerggren"
-* entry[=].resource = RuddiTestBerggren
-
-* entry[+].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[=].link.relation = "content"
-* entry[=].fullUrl = "Organization/AfsenderAfRuddisGGOP"
-* entry[=].resource = AfsenderAfRuddisGGOP
-
-* entry[+].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[=].link.relation = "content"
-* entry[=].fullUrl = "Organization/UdfoererAfRuddisRehab"
-* entry[=].resource = UdfoererAfRuddisRehab
-
-* entry[+].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[=].link.relation = "content"
-* entry[=].fullUrl = "Condition/RuddiAktionsdiagnoseGGOP"
-* entry[=].resource = RuddiAktionsdiagnoseGGOP
-
-* entry[+].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[=].link.relation = "content"
-* entry[=].fullUrl = "ServiceRequest/RuddiGGOPInformation"
-* entry[=].resource = RuddiGGOPInformation
-
-* entry[+].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[=].link.relation = "content"
-* entry[=].fullUrl = "CarePlan/RuddiTerapeutfagligUndersoegelse"
-* entry[=].resource = RuddiTerapeutfagligUndersoegelse
-
-
-* entry[+].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[=].link.relation = "content"
-* entry[=].fullUrl = "Encounter/RuddiKontaktUndersoegelseAnnuleret"
-* entry[=].resource = RuddiKontaktUndersoegelseAnnuleret
-
-
-* entry[+].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[=].link.relation = "content"
-* entry[=].fullUrl = "Encounter/RuddiKontaktUndersoegelse"
-* entry[=].resource = RuddiKontaktUndersoegelse
-
-
-* entry[+].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[=].link.relation = "content"
-* entry[=].fullUrl = "CarePlan/RuddiTraening"
-* entry[=].resource = RuddiTraening
-
-
-* entry[+].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[=].link.relation = "content"
-* entry[=].fullUrl = "Encounter/RuddiKontakt1Traening"
-* entry[=].resource = RuddiKontakt1Traening
-
-* entry[+].link.url = "http://fhir.kl.dk/rehab/content"
-* entry[=].link.relation = "content"
-* entry[=].fullUrl = "Condition/RuddiTilstand"
-* entry[=].resource = RuddiTilstand
-
-Instance: RuddiIndberetningsrapport2
-InstanceOf: Bundle
+InstanceOf: klgateway-140-delivery-report
 Description: "Indberetning for Ruddi"
 Usage: #example
 * type = #collection
@@ -138,6 +78,9 @@ Usage: #example
 
 * entry[+].fullUrl = "Encounter/RuddiKontaktUndersoegelse"
 * entry[=].resource = RuddiKontaktUndersoegelse
+
+* entry[+].fullUrl = "CarePlan/RuddiTraeningsforloeb"
+* entry[=].resource = RuddiTraeningsforloeb
 
 * entry[+].fullUrl = "CarePlan/RuddiTraening"
 * entry[=].resource = RuddiTraening
