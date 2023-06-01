@@ -1,0 +1,10 @@
+{
+    "package-id" : "kl.dk.fhir.rehab",
+    "version" : "1.0.0",
+    "path" : "http://fhir.kl.dk/rehab/1.0.0",
+    "mode" : "milestone",
+    "status" : "release",
+    "sequence" : "Releases",
+    "descmd": "@release-notes.md",
+    "first" : true
+  }
