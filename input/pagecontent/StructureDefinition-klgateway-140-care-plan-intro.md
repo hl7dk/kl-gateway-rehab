@@ -1,7 +1,7 @@
 ### Scope and usage
 The CarePlan for §140 is used whenever a rehabilitation care pathway is planned for a citizen in Danish municipalities. Care pathway or plan is a way to describe when a number of planned interventions are delivered together with a common schedule.
 
-The two types of plan in §119 are 'Opfølgningsforløb efter §140' and 'Interventionsforløb efter §140' and one of these two codes should be documented in CarePlan.category.
+The two types of plan in §140 are 'Opfølgningsforløb efter §140' and 'Interventionsforløb efter §140' and one of these two codes should be documented in CarePlan.category.
 
 Both types may be delivered with different repetions and duration.
 This is documented using:
