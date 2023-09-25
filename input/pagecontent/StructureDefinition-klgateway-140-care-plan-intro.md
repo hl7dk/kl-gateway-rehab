@@ -3,14 +3,6 @@ The CarePlan for §140 is used whenever a rehabilitation care pathway is planned
 
 The two types of plan in §140 are 'Opfølgningsforløb efter §140' and 'Interventionsforløb efter §140' and one of these two codes should be documented in CarePlan.category.
 
-Both types may be delivered with different repetions and duration.
-This is documented using:
-* activity.detail.scheduledTiming.repeat.count, for the number of encounters planned as part of the care plan
-* activity.detail.scheduledTiming.repeat.duration, for the avarage duration of each encounter
-* activity.detail.scheduledTiming.repeat.durationUnit, which has the mandatory value "min" for minutes, because the duration is messured in minutes.
-
-ScheduledTiming is mandatory for 'Interventionsforløb efter §140', but it is optional for 'Opfølgningsforløb efter §140'.
-
 It is important to distiguish correctly between the dates and times stated in the model. CarePlan.period.start is when the CarePlan was authorized (bevillingstid). The planned end-date is CarePlan.period.end, unless the date has already occured and the status is 'completed', then it is the actual end-date. Notice that end-date is not mandatory to report. All dates may be repported with or without time of day.
 
 CarePlan.status and CarePlan.intent are mandatory in the FHIR CarePlan resource. CarePlan.intent is always 'plan' in this implementation guide. CarePlan status should at least distiguish between 'unknown' and 'entered-in-error', but the actual status of the care plan may also be reported. Note that the meaning of 'active' is "ready to be acted upon", so it does not signify that the first activity has occured.
@@ -19,7 +11,8 @@ CarePlan.activity.detail.status is also mandatory, and all the statuses in the F
 
 * 'Hændelse medfører ophør'
 * 'Ikke yderligere behov (borger-vurderet)'
-* 'Ikke yderligere behov (fagperson-vurderet)' 
+* 'Ikke yderligere behov (fagperson-vurderet)'
+* 'Borger har ikke henvendt sig eller er udeblevet'
 * 'Aktivt fravalg'
     * 'Aktivt fravalg pga. anden sygdom'
     * 'Aktivt fravalg pga. økonomi ifm. transport'
@@ -45,9 +38,6 @@ Nedenstående tabel oversætter mellem de attributter der er defineret i den fæ
 |   FKI-attribut      | Definition        | FHIR  |
 | ------------- |-------------| -----|
 |indsatsforløbKategori|Udtrykker hvilken kategori indsatsforløbet har.|CarePlan.category|
-|indsatsforløbAntalGange|Antallet af gange der bevilliges i borgerens indsatsforløb|activity.detail.scheduledTiming.repeat.count|
-|indsatsforløbLængdeAfGange|Længden på hver af gangene i indsatsforløbet|activity.detail.scheduledTiming.repeat.duration|
-|indsatsforløbLængdeAfGangeEnhed|Enhed for længde, son altid skal sættes til minutter|activity.detail.scheduledTiming.repeat.durationUnit|
 |indsatsforløbBevillingstid|Tidspunktet for hvornår indsatsforløbet er bevilget|CarePlan.period.start|
 |indsatforløbAfslutningstid|Tidspunktet for hvornår indsatsforløbet er afsluttet, eller planlægges afsluttet|CarePlan.period.end|
 |indsatsforløbsstatus|Indikerer om indsatsforløbet er klar til at blive handlet på, om dokumentationen repræsentere en fremtidig intention eller er historisk.|CarePlan.status|

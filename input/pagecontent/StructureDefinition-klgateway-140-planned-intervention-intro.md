@@ -18,6 +18,8 @@ CarePlan.activity.detail.reasonReference holds the link between conditions and i
 
 CarePlan.basedOn referes to the care-pathway or plan, that this intervention is part of. It is mandatory to report for plannend interventions with a treatment focus. See which intervention codes appply in the invariant klgateway-140-intervention-1. It is optional for Interventions of type 'Opfølgning'.
 
+activity.detail.extension[deliveryType] details whether the intervention is delivered in a group or individually.
+
 ### Conversions between Danish information model and FHIR-profile
 
 Nedenstående tabel oversætter mellem de attributter der er defineret i den fælleskommunale informationsmodel (FKI), definerer kort den enkelte attribut på dansk og specificere hvilke af FHIR-profilens atributter der skal bruges til specifikation af indholdet
@@ -36,3 +38,4 @@ Nedenstående tabel oversætter mellem de attributter der er defineret i den fæ
 |indsatssubjekt|Den borger som den planlagte indsats retter sig mod|CarePlan.subject|
 |indsatsbegrundelse|Tilstand som indsatsen rettes mod|CarePlan.activity.detail.reasonReference|
 |indsatsDelAfPlan|Det indsatsforløb, som denne indsats er en del af|CarePlan.basedOn|
+|indsatsLeveringstype|Type der beskriver om indsatsen leveres individuelt eller gruppebaseret|activity.detail.extension:deliveryType|

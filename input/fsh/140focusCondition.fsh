@@ -20,7 +20,6 @@ Description: "Conditions which may be used to express the problem of a citizen i
 * verificationStatus 0..1
 * category 0..0
 * severity 0..0
-* code.text 0..0
 * code.coding.userSelected 0..0
 * code.coding.version 0..0
 * bodySite 0..0
@@ -41,15 +40,16 @@ Description: "Conditions which may be used to express the problem of a citizen i
 
 * clinicalStatus ^short = "[DK] fokusTilstandStatus"
 * code.coding ^short = "[DK] fokusTilstandskode"
+* code.text ^short = "[DK] fokusTilstandKodetekst"
 * subject ^short = "[DK] fokusTilstandsubjekt"
 
 
 Instance: RuddiAktionsdiagnoseGGOP
 InstanceOf: klgateway-140-focus-condition
 Title: "RuddiAktionsdiagnoseGGOP"
-Description: "Ruddis aktionsdiagnose fra GGOP, hvor man kan se, at han har haft en højresidig pertrokantær femurfraktur"
+Description: "Ruddis aktionsdiagnose fra GGOP, hvor man kan se, at han har haft en pertrokantær femurfraktur"
 Usage: #example
-* code.coding[SKS-D] = urn:oid:1.2.208.176.2.4.12#DS721+TUL1 "Pertrokantær femurfraktur, højresidig"
+* code.coding[SKS-D] = urn:oid:1.2.208.176.2.4.12#DS721 "Pertrokantær femurfraktur"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#unknown
 * subject = Reference(RuddiTestBerggren)
 

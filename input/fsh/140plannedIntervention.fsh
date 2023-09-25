@@ -25,16 +25,16 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.code.coding ^slicing.discriminator.type = #value
 * activity.detail.code.coding ^slicing.discriminator.path = "system"
 * activity.detail.code.coding ^slicing.rules = #closed
-* activity.detail.code.coding contains level2 0..1 and level2temp 0..1 and level3 0..1 MS
+* activity.detail.code.coding contains level2 0..1 and level3 0..1 MS
 * activity.detail.code.coding[level2].system = $FSIII
-* activity.detail.code.coding[level2] from KLInterventionCodes140
-* activity.detail.code.coding[level2temp].system = Canonical(Tempcodes)
-* activity.detail.code.coding[level2temp] from KLInterventionCodes140temp
+* activity.detail.code.coding[level2] from KLTrainingInterventionsFSIII
 //kl-term update delete two lines above
 * activity.detail.code.coding[level3].system = "http://gateway.kl.dk/1.0/CodeSystem/LocallyDefinedInterventions"
 * activity.detail.code.coding[level3].code 1..1
 * activity.detail.code.coding[level3].display 1..1
 * activity.detail.code.coding[level3] ^definition = "Shall contain locally defined code if it is a locally defined level 3 intervention"
+* activity.detail.extension contains DeliveryType named deliveryType 1..1
+* activity.detail.extension[deliveryType].valueCodeableConcept.coding from DeliveryTypes140 (required)
 * activity.detail.reasonCode ..0
 * activity.detail.scheduled[x] 0..0
 * activity.detail.performer 0..1 //indsatsudfører
@@ -107,7 +107,9 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.reasonReference ^short = "[DK] indsatsbegrundelse"
 * activity.detail.status ^short = "[DK] indsatsAktivitetsstatus"
 * activity.detail.performer ^short = "[DK] indsatsleverandør"
-* basedOn ^short = "[DK] IndsatsDelAfPlan"
+* basedOn ^short = "[DK] indsatsDelAfPlan"
+* activity.detail.extension[deliveryType] ^short = "[DK] indsatsLeveringstype"
+
 * obeys klgateway-140-intervention-1
 * obeys klgateway-140-intervention-2
 
@@ -115,37 +117,20 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 Invariant: klgateway-140-intervention-1
 Description: "has a reference to careplan if the intervention is a certain type of training"
 Severity: #error
-Expression: "(
-       code.coding.code = 'f8ac963c-6ec5-4ec5-bd90-a22fea4e2d16'
-    or code.coding.code = '029cb8af-08d5-4b8f-a911-7dfcb7c27483'
-    or code.coding.code = 'aeb3d2b2-a551-4c3a-86e2-d165c1aaf350'
-    or code.coding.code = '8728bce0-90c7-40c8-8c2f-f5c266dad02d'
-    or code.coding.code = 'fb26c466-14c9-49a1-b69b-a6339f3890e4'
-    or code.coding.code = 'c6192bb0-266f-43de-976d-e78335c5be0b'
-    or code.coding.code = '5002d3be-ee05-4ff7-9fd4-a0d815bd6cbd'
-    or code.coding.code = '6f1107a4-25d3-4d9a-bf35-bd1cf472d183'
-    or code.coding.code = '7d877253-e385-405c-8822-7fc3d2e7f3b0'
-    or code.coding.code = 'e5802281-a895-4a3f-868f-c50f1759cc00'
-    or code.coding.code = '8d9eb012-0f2e-4e3f-8ac9-8f3d87cfdc3b'
-    or code.coding.code = '4dbd9b85-8b89-45de-bf6f-9509aa122089'
-    or code.coding.code = '0a995193-b6ab-413b-8692-3456992807d6') implies basedOn.exists()"
-
- 
+Expression: "activity.detail.code.coding.code = '7f825e3e-1a5c-4249-bf41-9f7171fb6b8a'
+    or activity.detail.code.coding.code = '2abe20c7-c0b4-41c1-b397-52acf36499ef'
+    or activity.detail.code.coding.code = '58293f63-00d7-4730-8dbc-c784d40f9e23'
+    or activity.detail.code.coding.code = '2c661159-1bb3-4af2-bdf1-f3a9927a99e2'
+    or activity.detail.code.coding.code = '8d714c98-f23a-4722-8a2f-85c162fe4840'
+    or activity.detail.code.coding.code = '66fb32c9-ecc3-484b-be49-f20094be237c'
+    or activity.detail.code.coding.code = 'f8ac963c-6ec5-4ec5-bd90-a22fea4e2d16' implies basedOn.exists()"
 
 Invariant: klgateway-140-intervention-2
 Description: "does not have a reference to careplan if the intervention is a certain type of intervention"
 Severity: #error
-Expression: "(
-       code.coding.code = '1130ad70-6553-490d-87f8-5e8941687a0c'
-    or code.coding.code = 'ba3e17bd-d4aa-4848-acad-25adc8285c19') implies basedOn.empty())"
+Expression: "activity.detail.code.coding.code = '1130ad70-6553-490d-87f8-5e8941687a0c'
+    or activity.detail.code.coding.code = 'ba3e17bd-d4aa-4848-acad-25adc8285c19' implies basedOn.empty()"
 
-Extension: BasedOnServiceRequestExtension
-Title:     "basedOnServiceRequestExtension"
-Description: "Extension for pointing to the servicerequest, that started an intervention"
-* value[x] 1..1
-* value[x] only Reference(klgateway-140-servicerequest)
-* ^context.type = http://hl7.org/fhir/extension-context-type#element
-* ^context.expression = "CarePlan"
 
 Instance: RuddiTerapeutfagligUndersoegelse
 InstanceOf: klgateway-140-planned-intervention
@@ -153,6 +138,7 @@ Title: "RuddiTerapeutfagligUndersøgelse"
 Description: "Ruddi's terapeutfaglige undersøgelse"
 Usage: #example
 * activity.detail.code.coding[level2] = $FSIII#1130ad70-6553-490d-87f8-5e8941687a0c
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
 * period.start = 2022-05-23
 * period.end = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
@@ -167,7 +153,8 @@ InstanceOf: klgateway-140-planned-intervention
 Title: "RuddiTræning"
 Description: "Ruddi's træningsindsats"
 Usage: #example
-* activity.detail.code.coding[level2temp] = Tempcodes#8728bce0-90c7-40c8-8c2f-f5c266dad02d
+* activity.detail.code.coding[level2] = $FSIII#2abe20c7-c0b4-41c1-b397-52acf36499ef
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#2865f123-15a7-4a36-a514-32ea37c400ca "Gruppebaseret indsats"
 * period.start = 2022-05-30
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan
