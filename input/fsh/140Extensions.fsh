@@ -1,7 +1,7 @@
 Extension: PreconditionDate
 Title: "PreconditionDate"
 Description: "Extension for a date that needs to occur before the service requested can be performed"
-* value[x] only dateTime
+* value[x] only date
 * ^context.type = http://hl7.org/fhir/extension-context-type#element
 * ^context.expression = "ServiceRequest"
 
