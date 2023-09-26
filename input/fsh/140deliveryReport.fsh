@@ -20,10 +20,9 @@ Description: "Delivery report to deliver data for each citizen."
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-* entry contains citizen 1..1 and content 0..*
+* entry contains citizen 1..1
 * entry[citizen].resource only
     klgateway-140-citizen
-* entry[content].resource only Condition or CarePlan or klgateway-140-encounter or klgateway-140-organization or klgateway-140-citizen or klgateway-140-servicerequest
 * entry.resource ^short = "Citizen and content constrained to known profiles"
 * entry.search ..0
 * entry.request ..0
