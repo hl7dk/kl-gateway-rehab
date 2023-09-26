@@ -21,9 +21,7 @@ Description: "Encounter for first planned visits and all executed activities in 
 * subject only Reference(klgateway-140-citizen)
 * subject ^type.aggregation = #bundled
 * episodeOfCare ..0
-* basedOn 1..1
-* basedOn only Reference(klgateway-140-servicerequest)
-* basedOn ^type.aggregation = #bundled
+
 * extension contains
    BasedOnCarePlanExtension named basedOnCarePlan 0..1
 * extension[basedOnCarePlan].valueReference ^type.aggregation = #bundled
@@ -31,7 +29,7 @@ Description: "Encounter for first planned visits and all executed activities in 
 * appointment ..0
 * period 1..1
 * period.start 1..1
-* period.end ..1
+* period.end 1..1
 * length ..0
 * reasonCode ..0
 * reasonReference ..0
@@ -41,6 +39,7 @@ Description: "Encounter for first planned visits and all executed activities in 
 * location ..0
 * serviceProvider ..0
 * partOf ..0
+* basedOn 0..0
 
 //Danish descriptions
 * status ^short = "[DK] kontaktstatus"
@@ -48,26 +47,7 @@ Description: "Encounter for first planned visits and all executed activities in 
 * period.start ^short = "[DK] kontaktstart"
 * period.end ^short = "[DK] kontaktslut"
 * subject ^short = "[DK] kontaktsubjekt"
-* basedOn ^short = "[DK] kontaktanledning"
 * extension[basedOnCarePlan] ^short = "[DK] kontaktBaseretPå"
-
-Extension: BasedOnCarePlanExtension
-Title:     "basedOnCarePlanExtension"
-Description: "Extension for pointing to the careplan describing why this encounter is taking place, will be part of R5 without needing the extension"
-* value[x] 1..1
-* value[x] only Reference(klgateway-140-care-plan)
-
-
-Instance: RuddiKontaktUndersoegelseAnnuleret
-InstanceOf: klgateway-140-encounter
-Title: "RuddiKontaktUndersøgelseAnnuleret"
-Description: "Ruddis kontakt, som var planlagt til en terapeutfaglig undersøgelse, men som er blevet annuleret"
-Usage: #example
-* status = http://hl7.org/fhir/encounter-status#cancelled
-* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
-* period.start = 2022-05-28T15:30:00.000Z
-* subject = Reference(RuddiTestBerggren)
-* basedOn = Reference(RuddiGGOPInformation) 
 
 Instance: RuddiKontaktUndersoegelse
 InstanceOf: klgateway-140-encounter
@@ -77,8 +57,9 @@ Usage: #example
 * status = http://hl7.org/fhir/encounter-status#finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * period.start = 2022-06-02T12:10:00.000Z
+* period.end = 2022-06-02T12:40:00.000Z
 * subject = Reference(RuddiTestBerggren)
-* basedOn = Reference(RuddiGGOPInformation)
+* extension[basedOnCarePlan].valueReference = Reference(RuddiTerapeutfagligUndersoegelse)
 
 Instance: RuddiKontakt1Traening
 InstanceOf: klgateway-140-encounter
@@ -88,6 +69,6 @@ Usage: #example
 * status = http://hl7.org/fhir/encounter-status#finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * period.start = 2022-05-31T10:00:00.000Z
+* period.end = 2022-05-31T10:30:00.000Z
 * subject = Reference(RuddiTestBerggren)
-* basedOn = Reference(RuddiGGOPInformation)
 * extension[basedOnCarePlan].valueReference = Reference(RuddiTraeningsforloeb)

@@ -28,7 +28,7 @@ Description: "Care plans for §140 rehabilitation in Danish Municipalities."
 * activity.detail.performer only Reference(klgateway-140-organization)
 * activity.detail.performer ^type.aggregation = #bundled
 * extension contains
-   BasedOnServiceRequestExtension named basedOnServiceRequest 1..1
+   BasedOnServiceRequestExtension named basedOnServiceRequest 0..1
 
 //* extension[basedOnServiceRequest].valueReference only Reference(klgateway-140-servicerequest) //GGOP'en
 * extension[basedOnServiceRequest].valueReference ^type.aggregation = #bundled

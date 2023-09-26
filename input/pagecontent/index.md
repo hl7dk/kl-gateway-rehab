@@ -15,10 +15,12 @@ Information about the citizen that is the subjects of the report.
 
 ##### Attributes
 * A civil registration number (CPR-nr)
+* A deseased attribute signifying whether the patient is alive or dead
 * An organisation identifier that identifies the municipality holding and reporting the data
 
 ##### Validation
 * One and only one civil registration number exists, and is a syntactically valid CPR-nr
+* One and only one deseased attribute
 * One and only one managing organization exitis, and is a syntactically valid SOR code (only code length is currently validated in the profile, but the authorization validates the actual SOR code)
 
 ## Organization
@@ -40,6 +42,10 @@ This model is used to represent when a municipality recieves a referal for §140
 * A reference to the citizen
 * The time of the referal
 * A reference to the referal that this one replaces
+* A category signifying the type of GGOP
+* A discharge date
+* a status reason to express the reason that the service requested is on hold
+* a date where the first encounter was planned, whether is occurs or not
 * Two FHIR status attributes (status and intent)
 
 ##### Validation
@@ -49,6 +55,10 @@ This model is used to represent when a municipality recieves a referal for §140
 * One and only one reference to the citizen should be present.
 * The time of the referal is mandatory
 * A reference to a replaced referal may be present.
+* There might be one or two categories, one is mandatory
+* The dischage date is optional
+* The status reason is optional
+* The date where the first encounter was planned is optional
 * Both FHIR statuses are mandatory. Each of them should be drawn from the appropriate standard FHIR-ValueSet 
 
 ## FocusCondition
@@ -56,11 +66,13 @@ This model holds a diagnosis-code, as it is reported to the municipality as part
 
 ##### Attributes
 * A diagnosis code
+* A diagnosis text
 * A reference to the citizen
 * Two FHIR status attributes
 
 ##### Validation
-* One and only one diagnosis code exists and should be drawn from SKS
+* One diagnosis code may exists and should be drawn from SKS
+* One diagnosis text may exist
 * One and only one reference to the citizen exists
 * One FHIR status is mandatory and should be drawn from the appropriate standard FHIR-ValueSet. The other is not mandatory, but it is needed for reporting entered-in-error.
 
@@ -69,6 +81,7 @@ This model holds information about prevention/health promotion interventions pla
 
 ##### Attributes
 * A FSIII intervention code
+* A delivery type code that express whether the intervention is delivered in a group or individually
 * The time where the intervention was granted
 * The time where the intervention was stopped
 * A reference to the citizen
@@ -79,15 +92,16 @@ This model holds information about prevention/health promotion interventions pla
 * Three FHIR status attributes (status, intent, activity.detail.status)
 
 ##### Validation
-* One and only one FSIII intervention code may be present and it should be drawn from valid §140 FSIII interventions as expressed by the ValueSet.
+* One and only one FSIII intervention code may be present and it should be drawn from valid §140 FSIII interventions as expressed by the ValueSet
+* One and only one delivery type code, which should be drawn from the appropriate ValueSet 
 * One and only one time for when the intervention was granted
 * The time where the intervention was stopped may be present
 * One and only one reference to the citizen exists
-* A reference to the ServiceRequest is mandatory
+* A reference to the ServiceRequest is optional
 * A reference to one or more Conditions may exist, but are not required
 * One and only one reference to the organization that delivers the intervention exists
 * All FHIR statuses are mandatory. Each of them should be drawn from the appropriate standard FHIR-ValueSet.
-* The reference to the care plan is mandatory if the intervention is repeating such as 'Fysisk træning på hold'.
+* The reference to the care plan is mandatory if the intervention is repeating such as 'Fysisk træning'.
 
 ## CarePlan
 The CarePlan is used whenever a prevention/health promotion care pathway is planned for a citizen in Danish municipalities. Care plan is a way to describe when a number of planned interventions are delivered together with a common schedule.
@@ -100,7 +114,6 @@ The CarePlan is used whenever a prevention/health promotion care pathway is plan
 * A reference to the ServiceRequest, that started the CarePlan
 * A reference to the Citizen
 * An explaination for cancelling the CarePlan before its completion
-* A timing consisting of a count, duration and durationUnit to express the time granted to the intervention e.g. "8 times with a duration of 60min"
 * A reference to the organization that delivers the intervention
 * Three FHIR status attributes (status, intent, activity.detail.status)
 
@@ -108,10 +121,9 @@ The CarePlan is used whenever a prevention/health promotion care pathway is plan
 * One and only one category code may be present and it should be drawn from the associated ValueSet.
 * One and only one time for when the care plan was granted  is mandatory
 * The time where the care plan was stopped may be present
-* One and only one reference to the ServiceRequest that started the CarePlan is mandatory
+* A reference to the ServiceRequest that started the CarePlan is optional
 * One and only one reference to the Citizen exists
 * One and only one explaination for cancelling the care plan before its completion shall exist if and only if the status is 'cancelled' or 'stopped'. Else it is prohibited.
-* The timing shall exist for interventions, when the category-code is 'Interventionsforløb efter §140'
 * One and only one reference to the organization that delivers the intervention exists
 * All FHIR statuses are mandatory. Each of them should be drawn from the appropriate standard FHIR-ValueSet
 
@@ -123,17 +135,15 @@ Information about whenever a citizen meets the prevention/health promotion staff
 * The encounter start-time
 * The encounter end-time
 * A reference to the Citizen
-* A reference to the CarePlan that this encounter is a delivery of.
-* A reference to the ServiceRequest that is the reason for the delivery of this encounter 
+* A reference to the CarePlan or PlannedIntervention that this encounter is a delivery of
 * A FHIR status attribute
 
 ##### Validation
 * One ond only one encounter class exists, and should be drawn from the standard FHIR-ValueSet
 * One and only one encounter start-time exists
-* One encounter end-time may exist
+* One and only one end-time may exist
 * One and only one reference to the Citizen exists
-* A reference to the CarePlan may exist
-* One and only one reference to the ServiceRequest is mandatory
+* A reference to the CarePlan or PlannedIntervention may exist
 * One and only one FHIR status exists, and should be drawn from the standard FHIR-ValueSet
 
 ## Condition

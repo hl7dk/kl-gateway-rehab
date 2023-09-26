@@ -3,19 +3,18 @@ klgateway-140-encounter is used whenever a citizen meets the rehabilitation staf
 
 In the context of the rehabilitation repporting, all Encounter.status values may be used, but not all are mandatory. The mandatory part is:
 * To report all carried out encounters. For encounters carried out, use Encounter.status 'finished'.
-* To report, if the first encounter in a '§140' has been cancelled. This helps show that the municipalities adhere to the treatment guarantee (behandlingsgaranti), even though an actual encounter has not been carried out yet. Use Encounter.status 'cancelled'.
 * To report errors using status 'entered-in-error'
+
+Enconters that are planned, but not carried out are possible to report but not mandatory.
 
 Encounter.class is mandatory in FHIR. In Danish municipalities, the values are used as follows.
 * Visits in citizens homes have the code 'HH' home health, the code is also used for services that are not strictly health related e.g. help with cleaning. This code is also used, even if the activities stretch outside the citizens residence e.g. a physiotherapist that want to see a citizen walk outside, or a social worker helping with shpping activities.
 * Sessions where the citizens visit municipality facilities e.g. for training have the code "AMB" ambulatory.
 * For telehealth/telecare encounters, where the patient is contacted by telephone, by teleconference or e-mail, the code is 'VR' virtual.
 
-All encounters should be related to the ServiceRequest (request for rehabilitation according to §140 in the health act), so that it may be tracked which request resulted in what activities. Use Encounter.basedOn. An encounter may only be related to one ServiceRequest. If a second (updated) request is recieved to replace an existing one, while a citizen already recieves rehabilitation, Encounter.basedOn should point to the new service request.
+Encounter.extension[basedOnCarePlan] should be populated with a reference to the care plan or planned intervention that describes the activities that are planned for the encounter. 
 
-If the encounter delivers a treatment oriented intervention e.g. training, supervision and/or education - Encounter.extension[basedOnCarePlan] should be populated with a reference to the care plan that describes its content and scheduledTiming. 
-
-The time of the encounter is documented in Encounter.period.start, and is mandatory. The endtime is not mandatory.
+The time of the encounter is documented in Encounter.period.start and Encounter.periode.end, and both attributes are mandatory. Only planned time is mandatory to report. There is no expectation that the staff update the time if they finish a little earlier or a little later.
 
 Encounter.subject relates to the citizen that the encounter is about.
 

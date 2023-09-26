@@ -11,5 +11,10 @@ Nedenstående tabel oversætter mellem de attributter, der er defineret i den f�
 {:class="grid"}
 |   FKI-attribut      | Definition        | FHIR  |
 | ------------- |-------------| -----|
-|cpr-nummer|Officielt cpr-nummer på borgeren|patient.identifier.value|
-|Journalførende organisation|Organisation som ejer journalen med oplysninger|Patient.managingOrganization.identifier.value|
+|borgerCprNummer|Officielt cpr-nummer på borgeren|Patient.identifier.value|
+|borgerErDød|boolesk værdi der er sand hvis borgeren er død|Patient.identifier.value|
+|borgerJournalførendeOrganisation|Organisation som ejer journalen med oplysninger|Patient.managingOrganization.identifier.value|
+
+* identifier ^short = "[DK] borgerCprNummer"
+* deceasedBoolean ^short = "[DK] borgerErDød"
+* managingOrganization ^short = "[DK] borgerJournalførendeOrganisation"

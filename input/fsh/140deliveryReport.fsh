@@ -20,9 +20,10 @@ Description: "Delivery report to deliver data for each citizen."
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
-* entry contains citizen 1..1
+* entry contains citizen 1..1 and content 0..*
 * entry[citizen].resource only
     klgateway-140-citizen
+* entry[content].resource only Condition or CarePlan or klgateway-140-encounter or klgateway-140-organization or klgateway-140-citizen or klgateway-140-servicerequest
 * entry.resource ^short = "Citizen and content constrained to known profiles"
 * entry.search ..0
 * entry.request ..0
@@ -37,16 +38,16 @@ Description: "Delivery report to deliver data for each citizen."
 Invariant: gateway-140-report-1
 Description: "All condition resources shall conform to either klgateway-140-condition profile, or klgateway-119--focus-condition profile"
 Severity: #error
-Expression: "entry.ofType(Condition).all(
-    resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-condition')
- or resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-focus-condition'))"
+Expression: "entry.select(resource as Condition).all(
+    $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-condition')
+ or $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-focus-condition'))"
 
 Invariant: gateway-140-report-2
 Description: "All condition resources shall conform to either klgateway-140-condition profile, or klgateway-119--focus-condition profile"
 Severity: #error
-Expression: "entry.ofType(CarePlan).all(
-    resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-care-plan')
- or resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-planned-intervention'))"
+Expression: "entry.select(resource as CarePlan).all(
+    $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-care-plan')
+ or $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-planned-intervention'))"
 
 Instance: RuddiIndberetningsrapport
 InstanceOf: klgateway-140-delivery-report
@@ -73,9 +74,6 @@ Usage: #example
 * entry[+].fullUrl = "CarePlan/RuddiTerapeutfagligUndersoegelse"
 * entry[=].resource = RuddiTerapeutfagligUndersoegelse
 
-* entry[+].fullUrl = "Encounter/RuddiKontaktUndersoegelseAnnuleret"
-* entry[=].resource = RuddiKontaktUndersoegelseAnnuleret
-
 * entry[+].fullUrl = "Encounter/RuddiKontaktUndersoegelse"
 * entry[=].resource = RuddiKontaktUndersoegelse
 
@@ -84,6 +82,9 @@ Usage: #example
 
 * entry[+].fullUrl = "CarePlan/RuddiTraening"
 * entry[=].resource = RuddiTraening
+
+* entry[+].fullUrl = "CarePlan/RuddiFunctionalTraening"
+* entry[=].resource = RuddiFunctionalTraening
 
 * entry[+].fullUrl = "Encounter/RuddiKontakt1Traening"
 * entry[=].resource = RuddiKontakt1Traening

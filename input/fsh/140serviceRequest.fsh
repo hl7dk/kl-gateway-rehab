@@ -84,6 +84,7 @@ Usage: #example
 * reasonReference = Reference(RuddiAktionsdiagnoseGGOP)
 * subject = Reference(RuddiTestBerggren)
 * authoredOn = 2022-05-23
+* occurrencePeriod.start = 2022-05-28
 
 Invariant: gateway-140-service-request-1
 Description: "one of the order detail codes, should always be almen, specialiseret eller rehabilitering"

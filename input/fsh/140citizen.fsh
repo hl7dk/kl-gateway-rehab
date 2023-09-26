@@ -11,7 +11,9 @@ Description: "Administrative information about a citizen receiving care or care 
 * telecom ..0
 * gender ..0
 * birthDate ..0
-* deceased[x] ..0
+//* deceased[x] ..1
+* deceasedDateTime 0..0
+* deceasedBoolean 1..1
 * address ..0
 * maritalStatus ..0
 * multipleBirth[x] ..0
@@ -29,8 +31,9 @@ Description: "Administrative information about a citizen receiving care or care 
 * link ..0
 
 //Danish descriptions
-* identifier ^short = "[DK] borgers cpr-nummer"
-* managingOrganization ^short = "[DK] journalførende organisation"
+* identifier ^short = "[DK] borgerCprNummer"
+* deceasedBoolean ^short = "[DK] borgerErDød"
+* managingOrganization ^short = "[DK] borgerJournalførendeOrganisation"
 
 Instance: RuddiTestBerggren
 InstanceOf: klgateway-140-citizen
@@ -39,6 +42,7 @@ Usage: #example
 * identifier.use = #official
 * identifier.value = "1502779995"
 * identifier.system = "urn:oid:1.2.208.176.1.2"
+* deceasedBoolean = false
 * managingOrganization.identifier.use = #official
 * managingOrganization.identifier.value =  "451000016003"
 * managingOrganization.identifier.system = "urn:oid:1.2.208.176.1.1"

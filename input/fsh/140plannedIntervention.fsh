@@ -41,7 +41,7 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.performer only Reference(klgateway-140-organization)
 * activity.detail.performer ^type.aggregation = #bundled
 * extension contains
-   BasedOnServiceRequestExtension named basedOnServiceRequest 1..1
+   BasedOnServiceRequestExtension named basedOnServiceRequest 0..1
 
 * extension[basedOnServiceRequest].valueReference ^type.aggregation = #bundled
 
@@ -153,7 +153,22 @@ InstanceOf: klgateway-140-planned-intervention
 Title: "RuddiTræning"
 Description: "Ruddi's træningsindsats"
 Usage: #example
-* activity.detail.code.coding[level2] = $FSIII#2abe20c7-c0b4-41c1-b397-52acf36499ef
+* activity.detail.code.coding[level2] = $FSIII#2abe20c7-c0b4-41c1-b397-52acf36499ef "Fysisk træning"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#2865f123-15a7-4a36-a514-32ea37c400ca "Gruppebaseret indsats"
+* period.start = 2022-05-30
+* status = http://hl7.org/fhir/request-status#active
+* intent = http://hl7.org/fhir/care-plan-intent#plan
+* subject = Reference(RuddiTestBerggren)
+* extension[basedOnServiceRequest].valueReference = Reference(RuddiGGOPInformation)
+* activity.detail.status = http://hl7.org/fhir/care-plan-activity-status#in-progress
+* basedOn = Reference(RuddiTraeningsforloeb)
+
+Instance: RuddiFunctionalTraening
+InstanceOf: klgateway-140-planned-intervention
+Title: "RuddiFundktionsTræning"
+Description: "Ruddi's funktions-træningsindsats"
+Usage: #example
+* activity.detail.code.coding[level2] = $FSIII#58293f63-00d7-4730-8dbc-c784d40f9e23 "Funktionstræning"
 * activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#2865f123-15a7-4a36-a514-32ea37c400ca "Gruppebaseret indsats"
 * period.start = 2022-05-30
 * status = http://hl7.org/fhir/request-status#active
