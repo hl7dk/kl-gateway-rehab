@@ -6,7 +6,7 @@ id: kl.dk.fhir.rehab
 canonical: http://fhir.kl.dk/rehab
 name: KLGatewayRehab
 status: active
-version: 0.1.0
+version: 1.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2023+
 releaseLabel: ci-build

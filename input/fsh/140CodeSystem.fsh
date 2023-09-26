@@ -42,6 +42,7 @@ ValueSet: DeliveryTypes140
 Id: DeliveryTypes140
 Title: "DeliveryTypes"
 Description: "The delivery context types allowed in §140 rehabilitation"
+* ^experimental = false
 * include codes from system $KLCommonCodes where concept descendent-of #3f79cee2-b148-4f2c-9cbd-387820e74685
 
 

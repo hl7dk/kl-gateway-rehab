@@ -162,3 +162,15 @@ This model contains information about FSIII conditions. They should be reported 
 * One and only one reference to the Citizen exists
 * The condition-focus attribute may be set to 'problem-list-item', or not be present. See the detailed documentation.
 * clinicalStatus is mandatory. VerificationStatus is recommended but only required for when reporting 'entered-in-error'. Each of them should be drawn from the appropriate standard FHIR-ValueSet
+
+### Dependencies
+{% include dependency-table.xhtml %}
+
+### Cross Version Analysis
+{% include cross-version-analysis.xhtml %}
+
+### Global Profiles
+{% include globals-table.xhtml %}
+
+### IP Statements
+{% include ip-statements.xhtml %}

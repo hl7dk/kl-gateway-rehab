@@ -6,5 +6,10 @@
     "status" : "release",
     "sequence" : "Releases",
     "descmd": "@release-notes.md",
-    "first" : true
+    "desc" : "Initial release",
+    "title" : "KLGatewayRehab",
+    "first" : true,
+    "ci-build" : "https://build.fhir.org/ig/hl7dk/kl-gateway-rehab/",
+    "category" : "Clinical Registries",
+    "introduction" : "This IG includes models for reporting rehabilitation data from Danish Municipalities for secondary purposes."
   }
