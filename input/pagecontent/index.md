@@ -45,7 +45,7 @@ This model is used to represent when a municipality recieves a referal for §140
 * A category signifying the type of GGOP
 * A discharge date
 * a status reason to express the reason that the service requested is on hold
-* a date where the first encounter was planned, whether is occurs or not
+* a date where the first encounter was planned, whether it occurs or not
 * Two FHIR status attributes (status and intent)
 
 ##### Validation
@@ -104,7 +104,7 @@ This model holds information about prevention/health promotion interventions pla
 * The reference to the care plan is mandatory if the intervention is repeating such as 'Fysisk træning'.
 
 ## CarePlan
-The CarePlan is used whenever a prevention/health promotion care pathway is planned for a citizen in Danish municipalities. Care plan is a way to describe when a number of planned interventions are delivered together with a common schedule.
+The CarePlan is used whenever a §140 training is planned for a citizen in Danish municipalities. Care plan is a way to describe when a number of planned interventions are delivered together with a common schedule.
 
 ##### Attributes
 * A category code, which can be either 'Opfølgningsforløb efter §140' or 

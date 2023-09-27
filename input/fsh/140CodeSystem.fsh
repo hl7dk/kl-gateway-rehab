@@ -78,12 +78,4 @@ Description: "The service types allowed in §140"
 * ^experimental = false
 * $KLCommonCodes#7fc66c15-0cb3-4c89-9e18-f3a01e6a6592	//Træning
 
-ValueSet: InterventionTypes140
-Id: InterventionTypes140
-Title: "InterventionTypes"
-Description: "The type of intervention. Should be either group or individual"
-* ^experimental = false
-* include codes from system $KLCommonCodes where concept descendent-of #3f79cee2-b148-4f2c-9cbd-387820e74685
-
-
 

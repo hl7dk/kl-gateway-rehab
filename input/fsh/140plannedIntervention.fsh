@@ -73,7 +73,7 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.kind ..0
 * activity.detail.instantiatesCanonical ..0
 * activity.detail.instantiatesUri ..0
-* activity.detail.reasonReference 0..0
+* activity.detail.reasonReference 0..*
 * activity.detail.goal ..0
 * activity.detail.doNotPerform ..0
 // * activity.detail.scheduledString ..0

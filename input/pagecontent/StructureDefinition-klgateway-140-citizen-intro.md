@@ -3,6 +3,8 @@ klgateway-140-citizen is used to identify the subject of a rehabilitation report
 
 The managing organization is given by its SOR code. For most municipalities this will be the code for the municipality, but if a municipality delivers services covered by FSIII in different departments using different record systems (thus having mulitple custodians) the SOR codes of the department that acts as custodian is used.
 
+Patient.deceasedBoolean is a statement of whether the citizen is alive or dead.
+
 
 ### Conversions between Danish information model and FHIR-profile
 
@@ -12,9 +14,6 @@ Nedenstående tabel oversætter mellem de attributter, der er defineret i den f�
 |   FKI-attribut      | Definition        | FHIR  |
 | ------------- |-------------| -----|
 |borgerCprNummer|Officielt cpr-nummer på borgeren|Patient.identifier.value|
-|borgerErDød|boolesk værdi der er sand hvis borgeren er død|Patient.identifier.value|
+|borgerErDød|boolesk værdi der er sand hvis borgeren er død|Patient.deceasedBoolean|
 |borgerJournalførendeOrganisation|Organisation som ejer journalen med oplysninger|Patient.managingOrganization.identifier.value|
 
-* identifier ^short = "[DK] borgerCprNummer"
-* deceasedBoolean ^short = "[DK] borgerErDød"
-* managingOrganization ^short = "[DK] borgerJournalførendeOrganisation"
