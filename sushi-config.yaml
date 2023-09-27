@@ -15,9 +15,7 @@ publisher:
   url: http://kl.dk
 
 dependencies:
-  hl7.fhir.dk.core:
-    uri: https://hl7.dk/fhir/core
-    version: 2.1.0
+  hl7.fhir.dk.core: 2.1.0
   kl.dk.fhir.term: 1.1.0
   
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
