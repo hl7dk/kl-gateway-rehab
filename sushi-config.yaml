@@ -5,6 +5,7 @@
 id: kl.dk.fhir.rehab
 canonical: http://fhir.kl.dk/rehab
 name: KLGatewayRehab
+description: Danish municipalities implementation guide for §140 rehabilitation reporting
 status: active
 version: 1.0.0
 fhirVersion: 4.0.1
