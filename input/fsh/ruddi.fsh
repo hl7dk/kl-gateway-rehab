@@ -45,7 +45,7 @@ Title: "RuddiAktionsdiagnoseGGOP"
 Description: "Ruddis aktionsdiagnose fra GGOP, hvor man kan se, at han har haft en pertrokantær femurfraktur"
 Usage: #example
 * code.coding[SKS-D] = urn:oid:1.2.208.176.2.4.12#DS721 "Pertrokantær femurfraktur"
-* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#unknown
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * subject = Reference(55a0e014-0e97-4c26-8ef2-29d528bfcc46)
 
 Instance: 152a1f8f-db33-4fa4-b5ea-c6f4e5cebd22
