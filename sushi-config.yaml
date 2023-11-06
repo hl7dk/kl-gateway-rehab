@@ -25,3 +25,9 @@ dependencies:
 menu:
   Home: index.html
   Artifacts: artifacts.html
+
+  menu:
+  Home: index.html
+  Artifacts: artifacts.html
+  Example: example.html
+
