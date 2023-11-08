@@ -7,7 +7,7 @@ For each delivery report the story is told (in Danish), and a reporting example 
 #### Story
 Ruddis forløb er startet ved at der er sendt en GGOP fra Holbæk sygehus’ ortopædkirurgiske afdeling, med en anmodning om, at Holbæk kommune skal forestå §140 genoptræning.
 Den modtages og behandles d. 23. maj 2022 af Holbæk kommunes genoptræningscenter SOR: 1037801000016003. GGOP'en angiver aktionsdiagnosen til ’Pertrokantær femurfraktur', typen af GGOP er angivet til 'almen' og forventet udskrivningsdato til 24. maj 2022.
-I kommunens modtage-enhed vurderes GGOP'en, og det planlægges at igangsætte Ruddis forløb d. 28. maj, som derved ligger indenfor 7. dages garantien. Typen af genoptræning specificeres af kommunen som 'basal'.
+I kommunens modtage-enhed vurderes GGOP'en, og det planlægges at igangsætte Ruddis forløb d. 28. maj, som derved ligger indenfor 7 dages garantien. Typen af genoptræning specificeres af kommunen som 'basal'.
 I første omgang planlægges en terapeutfaglig undersøgelse.
 
 #### Reporting
@@ -44,7 +44,7 @@ The new content in the delivery report is an Enconter (delivery of træningsforl
 
 The report for this is found here: [DeliveryReport-Ruddi-6](Bundle-4a391f69-a909-4a79-92bd-1b0f812dc52a.html)
 
-# Seventh event June 22nd
+### Seventh event June 22nd
 
 #### Story
 En terapeut planlægger et træningsforløb med indsatserne 'fysisk træning' og 'funktionstræning', og ved en fejl gør hun det i Ruddis journal, i stedet for Ronnies journal. Da fejlen ikke er opdaget endnu, indrapporters de som et nyt indsatsforløb i Ruddis journal.
@@ -56,7 +56,7 @@ The new content in the delivery report is an a CarePlan (træningsforløb) and t
 
 The report for this is found here: [DeliveryReport-Ruddi-7](Bundle-9960b8dc-5ebf-4166-83d7-b042bcc6aca5.html)
 
-# Eighth event June 23rd
+### Eighth event June 23rd
 
 #### Story
 Ruddi oplever markant bedring og ønsker at afslutte træning, da han har mulighed for at fortsætte i det lokale træningscenter. Terapeuten afslutter Ruddis tilstande, træningsforløb og indsatser og det noteres i journalen, at Ruddi ønsker at afslutte træningen grundet anden træning.

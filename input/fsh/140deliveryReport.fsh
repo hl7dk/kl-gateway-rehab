@@ -3,6 +3,8 @@ Parent: Bundle
 Id: klgateway-140-delivery-report
 Title: "KLGateway140DeliveryReport"
 Description: "Delivery report to deliver data for each citizen."
+* meta.profile 1..1
+* meta.profile = "http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-delivery-report"
 * identifier ..0
 * type = #collection
 * timestamp 1..1
