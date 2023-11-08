@@ -432,7 +432,7 @@ Usage: #inline
 
 Instance: c8be2dc6-caa3-4c7e-81e8-0347896fb4d3-v2
 InstanceOf: klgateway-140-care-plan
-Title: "RonniesTræningsforløbFej"
+Title: "RonniesTræningsforløbFejl"
 Description: "Ronnies's træningsforløb som er en fejl"
 Usage: #inline
 * id = "c8be2dc6-caa3-4c7e-81e8-0347896fb4d3"
