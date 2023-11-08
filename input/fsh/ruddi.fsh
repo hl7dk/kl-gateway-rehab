@@ -290,7 +290,8 @@ Usage: #example
 
 
 Instance: c8be2dc6-caa3-4c7e-81e8-0347896fb4d3
-Title: "RonniesTræningsforløbFej"
+InstanceOf: klgateway-140-care-plan
+Title: "RonniesTræningsforløbFejl"
 Description: "Ronnies's træningsforløb som er en fejl"
 Usage: #inline
 * category = $KLCommonCodes#f15b2663-94d9-4d0c-a5de-d8bd8e1e4ebb
@@ -404,7 +405,7 @@ Usage: #inline
 * id = "1c74e3e8-e038-4182-a545-d86a9f064d44"
 * category = $KLCommonCodes#f15b2663-94d9-4d0c-a5de-d8bd8e1e4ebb
 * period.start = 2022-05-28
-* periode.end = 2022-06-23
+* period.end = 2022-06-23
 * status = http://hl7.org/fhir/request-status#revoked
 * intent = http://hl7.org/fhir/care-plan-intent#plan
 * subject = Reference(95ce3be6-dba6-48ab-b5d1-8a25929414dc)
@@ -422,7 +423,7 @@ Usage: #inline
 * activity.detail.code.coding[level2] = $FSIII#2abe20c7-c0b4-41c1-b397-52acf36499ef "Fysisk træning"
 * activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#2865f123-15a7-4a36-a514-32ea37c400ca "Gruppebaseret indsats"
 * period.start = 2022-05-28
-* periode.end = 2022-06-23
+* period.end = 2022-06-23
 * status = http://hl7.org/fhir/request-status#revoked
 * intent = http://hl7.org/fhir/care-plan-intent#plan
 * subject = Reference(95ce3be6-dba6-48ab-b5d1-8a25929414dc)
@@ -430,6 +431,7 @@ Usage: #inline
 * basedOn = Reference(1c74e3e8-e038-4182-a545-d86a9f064d44)
 
 Instance: c8be2dc6-caa3-4c7e-81e8-0347896fb4d3-v2
+InstanceOf: klgateway-140-care-plan
 Title: "RonniesTræningsforløbFej"
 Description: "Ronnies's træningsforløb som er en fejl"
 Usage: #inline
