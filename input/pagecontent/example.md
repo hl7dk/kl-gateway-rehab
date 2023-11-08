@@ -30,7 +30,7 @@ The new content in the delivery report is an Enconter (Terapeutfaglig undersøge
 
 The report for this is found here: [DeliveryReport-Ruddi-2](Bundle-4b9443a2-7231-4387-8e3d-614bf193df49.html)
 
-### Next events May 31st to June 21st, 2022
+### Events three to six May 31st to June 21st, 2022
 
 #### Story
 Ruddi gennemfører første træning d. 31. maj Herefter fremmøder Ruddi til 4 gang træning af 60 min. Dette medfører en indberetning til KLGateway af tid forbrugt på kontakterne.
@@ -42,4 +42,33 @@ A delivery report is generated containing the Citizen, two Organizations  (The s
 
 The new content in the delivery report is an Enconter (delivery of træningsforløb).
 
-The report for this is found here: [DeliveryReport-Ruddi-3](Bundle-4a391f69-a909-4a79-92bd-1b0f812dc52a.html)
+The report for this is found here: [DeliveryReport-Ruddi-6](Bundle-4a391f69-a909-4a79-92bd-1b0f812dc52a.html)
+
+# Seventh event June 22nd
+
+#### Story
+En terapeut planlægger et træningsforløb med indsatserne 'fysisk træning' og 'funktionstræning', og ved en fejl gør hun det i Ruddis journal, i stedet for Ronnies journal. Da fejlen ikke er opdaget endnu, indrapporters de som et nyt indsatsforløb i Ruddis journal.
+
+#### Reporting
+A delivery report is generated containing the Citizen, one Organizations  (the one delivering the intervention). These are not updated from last time, but they are reported because the new content references these instances.
+
+The new content in the delivery report is an a CarePlan (træningsforløb) and two PlannedInterventions.
+
+The report for this is found here: [DeliveryReport-Ruddi-7](Bundle-9960b8dc-5ebf-4166-83d7-b042bcc6aca5.html)
+
+# Eighth event June 23rd
+
+#### Story
+Ruddi oplever markant bedring og ønsker at afslutte træning, da han har mulighed for at fortsætte i det lokale træningscenter. Terapeuten afslutter Ruddis tilstande, træningsforløb og indsatser og det noteres i journalen, at Ruddi ønsker at afslutte træningen grundet anden træning.
+
+I forbindelse med at terapeuten er inde i journalen opdager hun at Ronnies indsats er lagt ind ved en fejl. De slettes/fejl-registreres i journalen.
+
+#### Reporting
+A delivery report is generated containing the Citizen, two Organizations  (The sender of the GGOP and the one delivering the intervention), a FocusCondition, and a ServiceRequest. These are not updated from last time, but they are reported because the updated content references these instances.
+
+The updated content in the delivery report is Ruddis CarePlan, PlannedIntervention, and two Conditions. They are all ended. In addition, the error with Ronnies data results in an update of his CarePlan and two PlannedInterventions, with status changed to entered-in-error.  
+
+The report for this is found here: [DeliveryReport-Ruddi-8](Bundle-c2f75bbf-2027-41bf-b597-de5e242f2b3d.html)
+
+
+
