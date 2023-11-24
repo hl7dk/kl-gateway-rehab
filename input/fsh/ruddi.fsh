@@ -150,7 +150,7 @@ Usage: #inline
 * activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
 * period.start = 2022-05-23
 * period.end = 2022-05-28
-* status = http://hl7.org/fhir/request-status#active
+* status = http://hl7.org/fhir/request-status#completed
 * intent = http://hl7.org/fhir/care-plan-intent#plan
 * subject = Reference(95ce3be6-dba6-48ab-b5d1-8a25929414dc)
 * extension[basedOnServiceRequest].valueReference = Reference(152a1f8f-db33-4fa4-b5ea-c6f4e5cebd22) 
