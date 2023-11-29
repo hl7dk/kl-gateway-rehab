@@ -138,7 +138,7 @@ Title: "RuddiTerapeutfagligUndersøgelse"
 Description: "Ruddi's terapeutfaglige undersøgelse"
 Usage: #example
 * activity.detail.code.coding[level2] = $FSIII#1130ad70-6553-490d-87f8-5e8941687a0c
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-05-23
 * period.end = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
