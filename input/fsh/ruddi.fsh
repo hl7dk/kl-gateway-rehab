@@ -88,7 +88,7 @@ Title: "RuddiTerapeutfagligUndersøgelse"
 Description: "Ruddi's terapeutfaglige undersøgelse"
 Usage: #inline
 * activity.detail.code.coding[level2] = $FSIII#1130ad70-6553-490d-87f8-5e8941687a0c "Terapeutfaglig udredning"
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-05-23
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan
@@ -147,7 +147,7 @@ Description: "Ruddi's terapeutfaglige undersøgelse afsluttes"
 Usage: #inline
 * id = "0735f195-a0fc-4f1f-b7be-5b3f6b8fee4a"
 * activity.detail.code.coding[level2] = $FSIII#1130ad70-6553-490d-87f8-5e8941687a0c "Terapeutfaglig udredning"
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-05-23
 * period.end = 2022-05-28
 * status = http://hl7.org/fhir/request-status#completed
