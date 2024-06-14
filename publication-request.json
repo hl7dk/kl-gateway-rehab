@@ -1,15 +1,10 @@
 {
     "package-id" : "kl.dk.fhir.rehab",
-    "version" : "1.0.0",
-    "path" : "http://fhir.kl.dk/rehab/1.0.0",
+    "version" : "2.0.0",
+    "path" : "http://fhir.kl.dk/rehab/2.0.0",
     "mode" : "milestone",
     "status" : "release",
     "sequence" : "Releases",
     "descmd": "@release-notes.md",
-    "desc" : "Initial release",
-    "title" : "KLGatewayRehab",
-    "first" : true,
-    "ci-build" : "https://build.fhir.org/ig/hl7dk/kl-gateway-rehab/",
-    "category" : "Clinical Registries",
-    "introduction" : "This IG includes models for reporting rehabilitation data from Danish Municipalities for secondary purposes."
+    "desc" : "Release of 2.0.0 with simplification changes implemented"
   }

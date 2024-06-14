@@ -50,7 +50,7 @@ This model is used to represent when a municipality recieves a referal for §140
 
 ##### Validation
 * A reference to the organization is mandatory.
-* The code for the intervention being requested should always be present and fixed to 'Træning'
+* The code for the intervention being requested should always be present and fixed to 'Kommunal genoptræning efter sygehusophold'
 * One or more references to FocusCondition may be present. It is only nessesary to report these, if they can be drawn directly from the MedCom message.
 * One and only one reference to the citizen should be present.
 * The time of the referal is mandatory
@@ -77,7 +77,7 @@ This model holds a diagnosis-code, as it is reported to the municipality as part
 * One FHIR status is mandatory and should be drawn from the appropriate standard FHIR-ValueSet. The other is not mandatory, but it is needed for reporting entered-in-error.
 
 ## PlannedIntervention
-This model holds information about prevention/health promotion interventions planned for a citizen.
+This model holds information about §140 rehabilitation interventions planned for a citizen.
 
 ##### Attributes
 * A FSIII intervention code
@@ -128,7 +128,7 @@ The CarePlan is used whenever a §140 training is planned for a citizen in Danis
 * All FHIR statuses are mandatory. Each of them should be drawn from the appropriate standard FHIR-ValueSet
 
 ## Encounter
-Information about whenever a citizen meets the prevention/health promotion staff in a Danish municipality context.
+Information about whenever a citizen meets the §140 rehabilitation staff in a Danish municipality context.
 
 ##### Attributes
 * Encounter class. The attribute holds a code which describe the place of delivery e.g. home visit or ambulatory.

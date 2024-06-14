@@ -79,8 +79,8 @@ Usage: #example
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/request-status#plan
 * code.coding = $KLCommonCodes#7fc66c15-0cb3-4c89-9e18-f3a01e6a6592
-* category[0].coding = Tempcodes#ffd81f78-352e-4589-a195-5350dd1df2a4 "almen"
-* category[1].coding = Tempcodes#8b962281-2ab6-4b10-9c91-4bac592d6d49 "basal"
+* category[0].coding = $KLCommonCodes#ffd81f78-352e-4589-a195-5350dd1df2a4 "almen"
+* category[1].coding = $KLCommonCodes#8b962281-2ab6-4b10-9c91-4bac592d6d49 "basal"
 * extension[dischargeDate].valueDate = 2022-05-24
 * reasonReference = Reference(RuddiAktionsdiagnoseGGOP)
 * subject = Reference(RuddiTestBerggren)

@@ -26,7 +26,7 @@ Description: "Detailed information about condition relating to §140 care pathwa
 * category.text ..0
 * severity 0..0
 * code 1..1
-* code from $KLConditionCodes140 (required)
+* code from Conditions140 (required)
 * code.coding 1..1
 * bodySite ..0
 * subject only Reference(klgateway-140-citizen)
@@ -53,9 +53,9 @@ Description: "Detailed information about condition relating to §140 care pathwa
 Instance: RuddiTilstand
 InstanceOf: klgateway-140-condition
 Title: "RuddiTilstand"
-Description: "Ruddis Tilstand vedrørende gang og bevægelse"
+Description: "Ruddis Tilstand vedrørende mobilitet og bevægelse"
 Usage: #example
-* code.coding =  $FSIII#3f27a7bc-790d-444e-bcf4-6e22a6b1da7e "Gang og bevægelse"
+* code.coding =  $FSIII#dd41df82-3c13-4523-b9c5-e83676425299 "Mobilitet og bevægelse"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = 2022-06-02
