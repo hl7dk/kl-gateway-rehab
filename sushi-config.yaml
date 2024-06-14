@@ -17,7 +17,7 @@ publisher:
 
 dependencies:
   hl7.fhir.dk.core: 3.2.0
-  kl.dk.fhir.term: current
+  kl.dk.fhir.term: 2.1.0
   
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
