@@ -1,1 +1,1 @@
-This release of kl-gateway-rehab takes into account the simplification of FSIII. Specifically the ValueSets of valid condition codes have been updated. A close to real-life example has been added to the implementation guide. Updated dk-core dependency to 3.2.0, and kl-term dependency to 2.1.0
+New ValueSet for Encounter.class
