@@ -1,1 +1,1 @@
-New ValueSet for Encounter.class
+Patch version. Enconter.entry style changed. New documentation for Encounter.class.

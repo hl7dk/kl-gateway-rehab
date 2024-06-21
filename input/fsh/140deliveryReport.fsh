@@ -13,10 +13,8 @@ Description: "Delivery report to deliver data for each citizen."
 * entry.link 0..0
 * entry.resource 1..1
 * entry.resource only
-    klgateway-140-condition or
-    klgateway-140-focus-condition or
-    klgateway-140-care-plan or
-    klgateway-140-planned-intervention or
+    Condition or
+    CarePlan or
     klgateway-140-encounter or
     klgateway-140-organization or
     klgateway-140-citizen or
@@ -34,23 +32,23 @@ Description: "Delivery report to deliver data for each citizen."
 * signature ..0
 * entry[citizen] ^short = "[DK] indberetningsrapportBorger"
 * entry ^short = "[DK] indberetningsrapportIndhold"
-// * obeys gateway-140-report-1
-// * obeys gateway-140-report-2
+* obeys gateway-140-report-1
+* obeys gateway-140-report-2
 
 
-// Invariant: gateway-140-report-1
-// Description: "All condition resources shall conform to either klgateway-140-condition profile, or klgateway-140--focus-condition profile"
-// Severity: #error
-// Expression: "entry.select(resource as Condition).all(
-//     $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-condition')
-//  or $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-focus-condition'))"
+Invariant: gateway-140-report-1
+Description: "All condition resources shall conform to either klgateway-140-condition profile, or klgateway-140--focus-condition profile"
+Severity: #error
+Expression: "entry.select(resource as Condition).all(
+    $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-condition')
+ or $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-focus-condition'))"
 
-// Invariant: gateway-140-report-2
-// Description: "All intervention resources shall conform to either klgateway-140-care-plan profile, or klgateway-140-planned-intervention profile"
-// Severity: #error
-// Expression: "entry.select(resource as CarePlan).all(
-//     $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-care-plan')
-//  or $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-planned-intervention'))"
+Invariant: gateway-140-report-2
+Description: "All intervention resources shall conform to either klgateway-140-care-plan profile, or klgateway-140-planned-intervention profile"
+Severity: #error
+Expression: "entry.select(resource as CarePlan).all(
+    $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-care-plan')
+ or $this.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-140-planned-intervention'))"
 
 Instance: RuddiIndberetningsrapport
 InstanceOf: klgateway-140-delivery-report
