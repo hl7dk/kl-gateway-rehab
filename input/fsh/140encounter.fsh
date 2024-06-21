@@ -6,9 +6,9 @@ Description: "Encounter for first planned visits and all executed activities in 
 * identifier ..0
 * statusHistory ..0
 * class.version ..0
-* class.display ..0
 * class.userSelected ..0
 * classHistory ..0
+* class from EncounterClassCodes (required)
 //* type from ExtendedEncounterTypes (required)
 * type.coding 0..0
 * type.coding.version ..0
@@ -64,10 +64,10 @@ Usage: #example
 Instance: RuddiKontakt1Traening
 InstanceOf: klgateway-140-encounter
 Title: "RuddiKontakt1Traening"
-Description: "Ruddis kontakt, hvor han har første træningsgang"
+Description: "Ruddis kontakt, hvor han har første træningsgang, leveret som skærmbesøg"
 Usage: #example
 * status = http://hl7.org/fhir/encounter-status#finished
-* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
+* class = $KLCommonCodes#124be95d-6924-4609-9d2a-e7c73ae3ab3d "Skærmbesøg"
 * period.start = 2022-05-31T10:00:00.000Z
 * period.end = 2022-05-31T10:30:00.000Z
 * subject = Reference(RuddiTestBerggren)
