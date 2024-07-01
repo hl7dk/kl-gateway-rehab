@@ -1,1 +1,1 @@
-Patch version. Enconter.entry style changed. New documentation for Encounter.class.
+Patch version. Enconter.entry style changed. New documentation for Encounter.class. Optional active-attribute added to Organization and Citizen. 
