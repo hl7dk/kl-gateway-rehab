@@ -13,7 +13,7 @@ Description: "Organization as expressed in KLGateway for rehabilitation."
 * identifier[CVR-ID] 0..0
 * identifier[Kommunekode] 0..0
 * identifier[Regionskode] 0..0
-* active 0..0
+* active 0..1
 * type 0..0
 * alias 0..0
 * telecom 0..0
@@ -23,6 +23,7 @@ Description: "Organization as expressed in KLGateway for rehabilitation."
 * contact 0..0
 
 * identifier ^short = "[DK] organisationsid"
+* active ^short = "[DK] harAktivJournal"
 
 Instance: AfsenderAfRuddisGGOP
 InstanceOf: klgateway-140-organization
