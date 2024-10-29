@@ -16,4 +16,5 @@ Nedenstående tabel oversætter mellem de attributter, der er defineret i den f�
 |borgerCprNummer|Officielt cpr-nummer på borgeren|Patient.identifier.value|
 |borgerErDød|boolesk værdi der er sand hvis borgeren er død|Patient.deceasedBoolean|
 |borgerJournalførendeOrganisation|Organisation som ejer journalen med oplysninger|Patient.managingOrganization.identifier.value|
+|harAktivJournal|Om borger er aktiv i kommunale journal, bruges til fejlregistrering| Patient.active|
 

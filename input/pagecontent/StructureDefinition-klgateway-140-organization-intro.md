@@ -11,3 +11,4 @@ nedenstående tabel definerer kort den enkelte attribut på dansk og specificere
 |   FKI-attribut      | Definition        | FHIR  |
 | ------------- |-------------| -----|
 |organisationsid|Id på organisationen der enten er en SOR kode eller et FK-Org id|Organization.identifier|
+|harAktivJournal|Om organisationen er aktiv i kommunale journal, bruges til fejlregistrering| Organization.active|

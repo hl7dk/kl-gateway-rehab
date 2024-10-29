@@ -7,10 +7,11 @@ In the context of the rehabilitation repporting, all Encounter.status values may
 
 Enconters that are planned, but not carried out are possible to report but not mandatory.
 
-Encounter.class is mandatory in FHIR. In Danish municipalities, the values are used as follows.
-* Visits in citizens homes have the code 'HH' home health, the code is also used for services that are not strictly health related e.g. help with cleaning. This code is also used, even if the activities stretch outside the citizens residence e.g. a physiotherapist that want to see a citizen walk outside, or a social worker helping with shpping activities.
-* Sessions where the citizens visit municipality facilities e.g. for training have the code "AMB" ambulatory.
-* For telehealth/telecare encounters, where the patient is contacted by telephone, by teleconference or e-mail, the code is 'VR' virtual.
+Encounter.class is mandatory in FHIR. In Danish municipalities the values are used as follows.
+* Visits in citizens homes have the code 'HH' Home health, the code is also used for services that are not strictly health related e.g. help with cleaning. This code is also used, even if the activities stretch outside the citizens residence e.g. a physiotherapist that want to see a citizen walk outside, or a social worker helping with shopping activities.
+* Sessions where the citizens visit municipality facilities e.g. for training or health prevention have the code 'AMB' Ambulatory.
+* Encounters delivered as a screen visit should be registered as 'Skærmbesøg'.
+* Encounters delivered using a phone should be registered as 'Telefonisk'
 
 Encounter.extension[basedOnCarePlan] should be populated with a reference to the care plan or planned intervention that describes the activities that are planned for the encounter. 
 

@@ -7,7 +7,7 @@ Description: "Administrative information about a citizen receiving care or care 
 * identifier[x-ecpr] 0..0
 * identifier[d-ecpr] 0..0
 * identifier[cpr] 1..1
-* active ..0
+* active ..1
 * name[official] 0..0
 * name ..0
 * telecom ..0
@@ -36,6 +36,7 @@ Description: "Administrative information about a citizen receiving care or care 
 * identifier ^short = "[DK] borgerCprNummer"
 * deceasedBoolean ^short = "[DK] borgerErDød"
 * managingOrganization ^short = "[DK] borgerJournalførendeOrganisation"
+* active ^short = "[DK] harAktivJournal"
 
 Instance: RuddiTestBerggren
 InstanceOf: klgateway-140-citizen

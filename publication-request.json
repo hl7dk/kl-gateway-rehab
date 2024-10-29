@@ -1,10 +1,10 @@
 {
     "package-id" : "kl.dk.fhir.rehab",
-    "version" : "2.1.0",
-    "path" : "http://fhir.kl.dk/rehab/2.1.0",
+    "version" : "2.1.1",
+    "path" : "http://fhir.kl.dk/rehab/2.1.1",
     "mode" : "milestone",
     "status" : "release",
     "sequence" : "Releases",
     "descmd": "@release-notes.md",
-    "desc" : "New ValueSet for Encounter.class"
+    "desc" : "Patch"
   }
