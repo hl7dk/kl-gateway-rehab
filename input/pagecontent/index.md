@@ -56,9 +56,9 @@ This model is used to represent when a municipality recieves a referal for §140
 * The time of the referal is mandatory
 * A reference to a replaced referal may be present.
 * There might be one or two categories, one is mandatory
-* The dischage date is optional
-* The status reason is optional
-* The date where the first encounter was planned is optional
+* The dischage date is mandatory
+* The status reason is optional, but 'must support'
+* The date where the first encounter was planned is optional, but 'must-support'
 * Both FHIR statuses are mandatory. Each of them should be drawn from the appropriate standard FHIR-ValueSet 
 
 ## FocusCondition

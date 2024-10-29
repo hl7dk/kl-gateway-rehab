@@ -5,9 +5,9 @@ The ServiceRequest, should have the sending organisation as the requester i.e th
 
 ServiceRequest.authoredOn holds the date form when the GGOP was recieved in the municipality, if this is available. Else, the time that the GGOP was send from the hosptal may be used.
 
-extension[dischargeDate] holds the date from when the patient was discharged from the hospital. If nothing else is available, the attribute 'Aktuel_kontakt_slutdato' from MedCom's GGOP can be used. However, it should always be possible for the municipalities to correct the date if the discharge date is changed.
+extension[dischargeDate] holds the date from when the patient was discharged from the hospital. If nothing else is available, the attribute 'Aktuel_kontakt_slutdato' from MedCom's GGOP can be used. However, it should always be possible to correct the date if the discharge date is changed.
 
-The date, where the patient is offered to recieve his/her first encounter is reported in occurrencePeriod.start . This is the official beginning of the delivery of the service, even if the encounter is eventually cancelled.
+The date, where the patient is offered to recieve his/her first encounter is reported in occurrencePeriod.start. This is the official beginning of the delivery of the service, even if the encounter is eventually cancelled. occurrencePeriod.start is labled with 'must support'.
 
 category is used to state what type of GGOP has been send to the municipality i.e. 'almen', 'specialiseret', 'rehabilitering'. If the GGOP is of type 'almen', an additional code may be added to distinguish between 'basal' and 'avanceret'. Note that the latter may change over time, and is allowed to be corrected.
 
@@ -22,7 +22,7 @@ It may happen that a new GGOP is recieved, while another one is already active f
 
 SeviceRequest.reasonReference is only used, if a code or codes were recieved in a MedCom message as a referal diagnosis (i GGOP). The reasonReference describes this through a reference to FocusCondition, which again uses SKS diagnosis codes to describe the problem/diagnosis, that led the hospital to request §140 rehabilitation. 
 
-ServiceRequest.code.coding is used to state, what kind of interventions the requester wants for the citizen. The value is always 'Træning'.
+ServiceRequest.code.coding is used to state, what kind of interventions the requester wants for the citizen. The value is always 'Kommunal genoptræning efter sygehusophold'.
 
 ### Conversions between Danish information model and FHIR-profile
 
