@@ -7,6 +7,7 @@ Description:    "Referal used to represent information about the training-refera
 * requester 1..1
 * requester only Reference(klgateway-140-organization) //organization used for people from the outside, KLCommonPractitioner for internal requests
 * requester ^type.aggregation = #bundled
+* code 1..1
 * code.coding from ServiceTypes140
 * category 1..2
 * category.coding from ServiceRequestTypes140
@@ -19,14 +20,14 @@ Description:    "Referal used to represent information about the training-refera
 * replaces only Reference(klgateway-140-servicerequest)
 * replaces ^type.aggregation = #bundled
 * intent = http://hl7.org/fhir/request-status#plan
-* extension contains PreconditionDate named dischargeDate 0..1 and
-                    $ExtRequestStatusReason named statusReason 0..1
+* extension contains PreconditionDate named dischargeDate 1..1 MS and
+                    $ExtRequestStatusReason named statusReason 0..1 MS
 * extension[statusReason].valueCodeableConcept.coding from ServiceRequestStatusReasons140 (required)
 * occurrence[x] 0..1
 * occurrenceDateTime 0..0
 * occurrenceTiming 0..0
 * occurrencePeriod 0..1
-* occurrencePeriod.start 0..1
+* occurrencePeriod.start 0..1 MS
 * occurrencePeriod.end 0..0
 
 //Setting 0..0 cardinalities

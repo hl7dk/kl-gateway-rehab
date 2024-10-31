@@ -1,1 +1,1 @@
-Patch version. Enconter.entry style changed. New documentation for Encounter.class. Optional active-attribute added to Organization and Citizen. 
+Release 2.2.0. Dependency to kl-term 2.2.0 established. deliveryType on PlannedIntervention has new codes, and cardinality has changed. Must support flags and new cardinalities have been added to ServiceRequest attributes to ensure impplementation of 7-day rule. Incremental delivery have been added, so that FLIS may use this IG for data delivery.

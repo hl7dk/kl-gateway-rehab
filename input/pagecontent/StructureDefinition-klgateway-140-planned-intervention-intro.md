@@ -18,7 +18,7 @@ CarePlan.activity.detail.reasonReference holds the link between conditions and i
 
 CarePlan.basedOn referes to the care-pathway or plan, that this intervention is part of. It is mandatory to report for plannend interventions with a treatment focus. See which intervention codes appply in the invariant klgateway-140-intervention-1. It is optional for Interventions of type 'Opfølgning'.
 
-activity.detail.extension[deliveryType] details whether the intervention is delivered in a group or individually.
+activity.detail.extension[deliveryType] is used to state, how interventions are delivered. Valid values are 'individual', 'group based', 'delivered using a robot' 'delivered using digital solution'. Note that more than one code may apply to one intervention e.g. training may be delivered partially by an app 'delivered using digital solution' and partially by one-to-one interaction 'individual'.
 
 ### Conversions between Danish information model and FHIR-profile
 
@@ -38,4 +38,4 @@ Nedenstående tabel oversætter mellem de attributter der er defineret i den fæ
 |indsatssubjekt|Den borger som den planlagte indsats retter sig mod|CarePlan.subject|
 |indsatsbegrundelse|Tilstand som indsatsen rettes mod|CarePlan.activity.detail.reasonReference|
 |indsatsDelAfPlan|Det indsatsforløb, som denne indsats er en del af|CarePlan.basedOn|
-|indsatsLeveringstype|Type der beskriver om indsatsen leveres individuelt eller gruppebaseret|activity.detail.extension:deliveryType|
+|indsatsLeveringstype|Type der beskriver hvordan indsatsen leveres|activity.detail.extension:deliveryType|

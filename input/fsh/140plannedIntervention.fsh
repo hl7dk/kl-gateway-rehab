@@ -33,7 +33,7 @@ Description: "Planned interventions for §140 rehabilitation in Danish Municipal
 * activity.detail.code.coding[level3].code 1..1
 * activity.detail.code.coding[level3].display 1..1
 * activity.detail.code.coding[level3] ^definition = "Shall contain locally defined code if it is a locally defined level 3 intervention"
-* activity.detail.extension contains DeliveryType named deliveryType 1..1
+* activity.detail.extension contains DeliveryType named deliveryType 1..*
 * activity.detail.extension[deliveryType].valueCodeableConcept.coding from DeliveryTypes140 (required)
 * activity.detail.reasonCode ..0
 * activity.detail.scheduled[x] 0..0

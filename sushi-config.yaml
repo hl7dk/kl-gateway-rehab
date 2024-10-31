@@ -7,7 +7,7 @@ canonical: http://fhir.kl.dk/rehab
 name: KLGatewayRehab
 description: Danish municipalities implementation guide for §140 rehabilitation reporting
 status: active
-version: 2.1.1
+version: 2.2.0
 fhirVersion: 4.0.1
 copyrightYear: 2023+
 releaseLabel: Release #ci-build
@@ -17,7 +17,7 @@ publisher:
 
 dependencies:
   hl7.fhir.dk.core: 3.2.0
-  kl.dk.fhir.term: 2.1.0
+  kl.dk.fhir.term: 2.2.0
   
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
